@@ -169,6 +169,11 @@
     }
 
     if (window.lucide) window.lucide.createIcons();
+
+    // Load sparkle effects
+    var sp = document.createElement('script');
+    sp.src = 'sparkle.js';
+    document.body.appendChild(sp);
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
