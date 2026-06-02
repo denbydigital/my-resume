@@ -15,7 +15,7 @@ body {
 }
 a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; }
-::selection { background: var(--clay-100); color: var(--clay-900); }
+::selection { background: var(--clay-100); color: var(--clay-800); }
 
 .wrap { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 32px; }
 .measure { max-width: 64ch; }
@@ -23,7 +23,7 @@ img { display: block; max-width: 100%; }
 /* ------------------------------------------------------------------ HEADER */
 .site-header {
   position: sticky; top: 0; z-index: 50;
-  background: oklch(1.000 0.000 0 / 0.85);
+  background: rgba(251,249,245,0.82);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid transparent;
@@ -97,13 +97,13 @@ img { display: block; max-width: 100%; }
 .page-hero { padding: 64px 0 28px; }
 .page-hero h1 {
   font-family: var(--font-serif); font-weight: 500; font-size: 52px; line-height: 1.06;
-  letter-spacing: -0.02em; margin: 16px 0 0; max-width: 16ch; text-wrap: balance;
+  letter-spacing: -0.02em; margin: 16px 0 0; max-width: 16ch;
 }
-.page-hero .lede { margin: 20px 0 0; max-width: 60ch; text-wrap: pretty; }
+.page-hero .lede { margin: 20px 0 0; max-width: 60ch; }
 .crumb { font-family: var(--font-mono); font-size: 12px; color: var(--fg-3); letter-spacing: 0.06em; }
 
 /* ------------------------------------------------------------------ SECTIONS */
-.section { padding: 56px 0; }
+.section { padding: 40px 0; }
 .section--sunk { background: var(--bg-sunk); border-top: 1px solid var(--stone-200); border-bottom: 1px solid var(--stone-200); }
 .section__head { margin-bottom: 28px; }
 .section__head h2 {
@@ -148,7 +148,7 @@ img { display: block; max-width: 100%; }
 /* ------------------------------------------------------------------ FOOTER */
 .site-footer { background: var(--pine-100); color: var(--fg-1); margin-top: 8px; border-top: 1px solid var(--pine-200); }
 .site-footer .wrap { padding-top: 56px; padding-bottom: 40px; }
-.foot-cta { display: flex; align-items: flex-end; justify-content: space-between; gap: 28px; flex-wrap: wrap; padding-bottom: 40px; border-bottom: 1px solid var(--border-on-dark); }
+.foot-cta { display: flex; align-items: flex-end; justify-content: space-between; gap: 28px; flex-wrap: wrap; padding-bottom: 40px; border-bottom: 1px solid rgba(45,59,51,0.14); }
 .foot-cta h2 { font-family: var(--font-serif); font-weight: 500; font-size: 30px; margin: 12px 0 8px; color: var(--pine-900); max-width: 18ch; line-height: 1.12; }
 .foot-cta p { margin: 0; color: var(--fg-2); }
 .foot-base { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; padding-top: 28px; }

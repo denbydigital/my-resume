@@ -1,6 +1,6 @@
 /* ============================================================================
-   LAURA DENBY — BRAND SYSTEM
-   Direction: Ink & Leaf — deep forest green authority, warm amber accent, pure white ground.
+   AVERY SLOANE — BRAND SYSTEM
+   colors_and_type.css — foundational + semantic tokens
    ----------------------------------------------------------------------------
    Fonts are loaded from Google Fonts (see @import below). If you need an
    offline / self-hosted build, drop the .woff2 files into ./fonts and swap the
@@ -21,86 +21,86 @@
   --font-mono:  'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
 
   /* ---------------------------------------------------------------------- */
-  /* CORE PALETTE — Direction: Ink & Leaf (OKLCH)                         */
+  /* CORE PALETTE — raw scales                                              */
   /* ---------------------------------------------------------------------- */
 
-  /* Stone — structural neutral (borders, dividers, muted containers) */
-  --stone-50:  oklch(0.980 0.005 90);
-  --stone-100: oklch(0.950 0.008 90);
-  --stone-200: oklch(0.900 0.010 90);
-  --stone-300: oklch(0.830 0.012 90);
-  --stone-400: oklch(0.760 0.012 90);
-  --stone-500: oklch(0.680 0.012 90);
-  --stone-600: oklch(0.550 0.010 90);
-  --stone-700: oklch(0.420 0.010 90);
-  --stone-800: oklch(0.300 0.008 90);
-  --stone-900: oklch(0.200 0.008 90);
+  /* Stone — warm neutral (the backbone of the system) */
+  --stone-50:  #FBF9F5;
+  --stone-100: #F4EFE7;
+  --stone-200: #E9E1D5;
+  --stone-300: #D8CDBC;
+  --stone-400: #B9AD99;
+  --stone-500: #948A78;
+  --stone-600: #6E6657;
+  --stone-700: #514B40;
+  --stone-800: #353129;
+  --stone-900: #211E18;  /* warm near-black ink */
 
-  /* Primary — Forest Green (hue 152) — authority, identity */
-  --pine-50:  oklch(0.970 0.015 152);
-  --pine-100: oklch(0.930 0.030 152);
-  --pine-200: oklch(0.860 0.055 152);
-  --pine-300: oklch(0.760 0.090 152);
-  --pine-400: oklch(0.640 0.115 152);
-  --pine-500: oklch(0.520 0.128 152);
-  --pine-600: oklch(0.380 0.130 152);   /* base — buttons, links */
-  --pine-700: oklch(0.310 0.115 152);
-  --pine-800: oklch(0.240 0.090 152);
-  --pine-900: oklch(0.170 0.060 152);
+  /* Primary — soft dusty blue (calm, neutral, professional) */
+  --pine-50:  #EFF2F8;
+  --pine-100: #DEE4F1;
+  --pine-200: #C6D0E7;
+  --pine-300: #A6B5D9;
+  --pine-400: #8598C6;
+  --pine-500: #6A7EB2;
+  --pine-600: #56699D;   /* base — buttons / links */
+  --pine-700: #45547E;
+  --pine-800: #364162;
+  --pine-900: #29314A;
 
-  /* Accent — Amber Gold (hue 55) — warmth, the one human note */
-  --clay-50:  oklch(0.970 0.020 55);
-  --clay-100: oklch(0.930 0.045 55);
-  --clay-200: oklch(0.870 0.075 55);
-  --clay-300: oklch(0.820 0.100 55);
-  --clay-400: oklch(0.750 0.120 55);
-  --clay-500: oklch(0.680 0.130 55);    /* base */
-  --clay-600: oklch(0.580 0.125 55);
-  --clay-700: oklch(0.460 0.110 55);
-  --clay-800: oklch(0.340 0.085 55);
-  --clay-900: oklch(0.220 0.060 55);
+  /* Accent — soft muted blush rose (warm, gentle, human) */
+  --clay-50:  #FAEFF0;
+  --clay-100: #F3DADD;
+  --clay-200: #E8BDC3;
+  --clay-300: #D99AA3;
+  --clay-400: #CC8089;
+  --clay-500: #BE6B75;   /* base */
+  --clay-600: #A4555F;
+  --clay-700: #82424B;
+  --clay-800: #5D2F35;
+  --clay-900: #3F1F23;
 
-  /* Semantic states (tuned to sit beside Pine + Clay) */
-  --success:    oklch(0.42 0.130 145);
-  --success-bg: oklch(0.95 0.030 145);
-  --warning:    oklch(0.58 0.140 65);
-  --warning-bg: oklch(0.95 0.035 65);
-  --error:      oklch(0.48 0.150 22);
-  --error-bg:   oklch(0.96 0.025 22);
-  --info:       oklch(0.45 0.100 220);
-  --info-bg:    oklch(0.95 0.025 220);
+  /* Semantic hues (warm-tuned to live beside Pine + Clay) */
+  --success: #2F7D5B;
+  --success-bg: #E6F1EA;
+  --warning: #C98A2B;
+  --warning-bg: #F7ECD6;
+  --error:   #B4472F;
+  --error-bg: #F7E2DB;
+  --info:    #2E6F8E;
+  --info-bg: #E0EDF2;
 
   /* ---------------------------------------------------------------------- */
   /* SEMANTIC ROLES (light theme)                                           */
   /* ---------------------------------------------------------------------- */
-  --bg:          oklch(1.000 0.000 0);          /* page background — pure white */
-  --bg-sunk:     oklch(0.955 0.008 152);        /* recessed sections — faint green tint */
-  --surface:     oklch(0.970 0.000 0);          /* cards, raised surfaces */
-  --surface-2:   oklch(0.955 0.008 152);        /* nested/alt surfaces */
-  --ink:         var(--pine-900);               /* dark sections / inverse bg */
+  --bg:          var(--stone-50);     /* page background */
+  --bg-sunk:     var(--pine-50);       /* recessed sections — soft sage tint */
+  --surface:     #FFFFFF;             /* cards, raised surfaces */
+  --surface-2:   var(--stone-50);     /* nested/alt surfaces */
+  --ink:         var(--stone-900);    /* dark sections / inverse bg */
 
-  --fg-1:        oklch(0.150 0.020 152);        /* primary text */
-  --fg-2:        oklch(0.480 0.012 152);        /* secondary text */
-  --fg-3:        oklch(0.580 0.010 152);        /* muted / captions */
-  --fg-on-dark:  oklch(0.960 0.005 152);        /* text on dark surfaces */
-  --fg-on-dark-2:oklch(0.720 0.010 152);        /* secondary text on dark */
+  --fg-1:        var(--stone-900);    /* primary text */
+  --fg-2:        var(--stone-600);    /* secondary text */
+  --fg-3:        var(--stone-500);    /* muted / captions */
+  --fg-on-dark:  var(--stone-50);     /* text on ink/pine surfaces */
+  --fg-on-dark-2:#C9C2B4;             /* secondary text on dark */
 
-  --border:        oklch(0.880 0.008 152);      /* default hairline */
-  --border-strong: oklch(0.800 0.012 152);      /* emphasized divider */
-  --border-on-dark: oklch(0.960 0.005 152 / 0.14);
+  --border:      var(--stone-200);    /* default hairline */
+  --border-strong: var(--stone-300);  /* emphasized divider */
+  --border-on-dark: rgba(251,249,245,0.14);
 
-  --primary:        var(--pine-600);            /* primary actions, links */
+  --primary:        var(--pine-600);  /* primary actions, links */
   --primary-hover:  var(--pine-700);
   --primary-press:  var(--pine-800);
-  --primary-soft:   var(--pine-50);
-  --on-primary:     oklch(1.000 0.000 0);
+  --primary-soft:   var(--pine-50);   /* tinted fills */
+  --on-primary:     #FFFFFF;
 
-  --accent:         var(--clay-500);            /* highlights, eyebrows */
-  --accent-hover:   var(--clay-600);
+  --accent:         var(--clay-600);  /* highlights, eyebrows (readable) */
+  --accent-hover:   var(--clay-700);
   --accent-soft:    var(--clay-50);
-  --on-accent:      oklch(1.000 0.000 0);
+  --on-accent:      #FFFFFF;
 
-  --focus-ring:  oklch(0.380 0.130 152 / 0.30);
+  --focus-ring:  rgba(86,105,157,0.34);
 
   /* ---------------------------------------------------------------------- */
   /* RADII                                                                  */
@@ -130,10 +130,10 @@
   /* SHADOWS — soft, warm, low (calm elevation)                            */
   /* Tinted with warm ink rather than pure black.                          */
   /* ---------------------------------------------------------------------- */
-  --shadow-xs: 0 1px 2px oklch(0.150 0.020 152 / 0.06);
-  --shadow-sm: 0 1px 2px oklch(0.150 0.020 152 / 0.05), 0 2px 6px oklch(0.150 0.020 152 / 0.05);
-  --shadow-md: 0 2px 4px oklch(0.150 0.020 152 / 0.05), 0 8px 20px oklch(0.150 0.020 152 / 0.07);
-  --shadow-lg: 0 4px 8px oklch(0.150 0.020 152 / 0.05), 0 18px 40px oklch(0.150 0.020 152 / 0.10);
+  --shadow-xs: 0 1px 2px rgba(33,30,24,0.06);
+  --shadow-sm: 0 1px 2px rgba(33,30,24,0.05), 0 2px 6px rgba(33,30,24,0.05);
+  --shadow-md: 0 2px 4px rgba(33,30,24,0.05), 0 8px 20px rgba(33,30,24,0.07);
+  --shadow-lg: 0 4px 8px rgba(33,30,24,0.05), 0 18px 40px rgba(33,30,24,0.10);
   --shadow-focus: 0 0 0 3px var(--focus-ring);
 
   /* ---------------------------------------------------------------------- */
@@ -264,7 +264,7 @@ code, .code {
   font-family: var(--font-mono);
   font-weight: 400;
   font-size: 0.9em;
-  color: var(--pine-600);
+  color: var(--pine-700);
   background: var(--pine-50);
   padding: 0.1em 0.4em;
   border-radius: var(--r-xs);

@@ -4,7 +4,9 @@
       "Bash(node \"C:\\\\Users\\\\laura\\\\.claude\\\\skills\\\\impeccable\\\\scripts\\\\context.mjs\")",
       "Skill(impeccable)",
       "Skill(impeccable:*)",
-      "Bash(git fetch *)"
+      "Bash(git fetch *)",
+      "Bash(powershell -Command \"Expand-Archive -Path 'C:\\\\Users\\\\laura\\\\Downloads\\\\Laura Denby — Brand System.zip' -DestinationPath 'C:\\\\Users\\\\laura\\\\Downloads\\\\brand-restore' -Force\")",
+      "Read(//c/Users/laura/Downloads/**)"
     ]
   }
 }
