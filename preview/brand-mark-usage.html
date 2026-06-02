@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin:0; padding:26px 32px; background:var(--bg); }
+  .name { font-family:var(--font-mono); font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--fg-2); margin-bottom:18px; }
+  .row { display:flex; gap:16px; }
+  .tile { flex:1; height:120px; border-radius:14px; display:flex; align-items:center; justify-content:center; }
+  .tile img { width:48px; height:48px; }
+  .tile.light { background:#fff; border:1px solid var(--stone-200); }
+  .tile.paper { background:var(--stone-100); }
+  .tile.pine { background:var(--pine-800); }
+  .tile.clay { background:var(--clay-500); }
+  .cap { font-family:var(--font-mono); font-size:10px; color:var(--fg-3); text-align:center; margin-top:8px; }
+  .col { flex:1; }
+</style>
+</head>
+<body>
+  <div class="name">Mark — on backgrounds</div>
+  <div class="row">
+    <div class="col"><div class="tile light"><img src="../assets/mark.svg" alt=""></div><div class="cap">on white</div></div>
+    <div class="col"><div class="tile paper"><img src="../assets/mark.svg" alt=""></div><div class="cap">on paper</div></div>
+    <div class="col"><div class="tile pine"><img src="../assets/mark-mono.svg" style="color:#FBF9F5" alt=""></div><div class="cap">mono · on pine</div></div>
+    <div class="col"><div class="tile clay"><img src="../assets/mark-mono.svg" style="color:#fff" alt=""></div><div class="cap">mono · on clay</div></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin:0; padding:30px 28px 36px; background:var(--bg); }
+  .name { font-family:var(--font-mono); font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--fg-2); margin-bottom:24px; }
+  .row { display:flex; gap:34px; }
+  .item { display:flex; flex-direction:column; align-items:center; gap:14px; }
+  .box { width:120px; height:70px; background:#fff; border-radius:14px; }
+  .lab b { font-family:var(--font-sans); font-size:12.5px; color:var(--fg-1); }
+  .lab span { font-family:var(--font-mono); font-size:10px; color:var(--fg-3); display:block; text-align:center; margin-top:2px; }
+</style>
+</head>
+<body>
+  <div class="name">Elevation — soft, low, warm-tinted</div>
+  <div class="row">
+    <div class="item"><div class="box" style="box-shadow:0 1px 2px rgba(33,30,24,.05),0 2px 6px rgba(33,30,24,.05)"></div><div class="lab"><b>shadow-sm</b><span>resting cards</span></div></div>
+    <div class="item"><div class="box" style="box-shadow:0 2px 4px rgba(33,30,24,.05),0 8px 20px rgba(33,30,24,.07)"></div><div class="lab"><b>shadow-md</b><span>hover / popovers</span></div></div>
+    <div class="item"><div class="box" style="box-shadow:0 4px 8px rgba(33,30,24,.05),0 18px 40px rgba(33,30,24,.10)"></div><div class="lab"><b>shadow-lg</b><span>modals</span></div></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Laura Denby · IT Business Analyst</title>
+<link rel="stylesheet" href="styles/tokens.css">
+<link rel="stylesheet" href="styles/site.css">
+<style>
+  html, body { height: 100%; }
+
+  /* ------------------------------------------------------------------ COVER */
+  .cover {
+    position: relative; min-height: 100vh; overflow: hidden;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: 40px 24px;
+    color: var(--fg-1);
+    transition: opacity 420ms var(--ease-out), transform 520ms var(--ease-out);
+  }
+  body.leaving .cover { opacity: 0; transform: scale(1.015); }
+
+  /* ------------------------------------------------------------------ ORBS */
+  /* Two slow-drifting colour blobs — make the white ground feel alive */
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    will-change: transform;
+  }
+  .orb--pine {
+    width: min(680px, 90vw); height: min(680px, 90vw);
+    background: var(--pine-200);
+    filter: blur(110px);
+    opacity: 0.38;
+    top: -22%; right: -14%;
+    animation: orb-a 22s ease-in-out infinite;
+  }
+  .orb--clay {
+    width: min(500px, 65vw); height: min(500px, 65vw);
+    background: var(--clay-200);
+    filter: blur(100px);
+    opacity: 0.28;
+    bottom: -16%; left: -10%;
+    animation: orb-b 28s ease-in-out infinite;
+  }
+  @keyframes orb-a {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    35%       { transform: translate(-48px, 38px) scale(1.07); }
+    70%       { transform: translate(32px, -26px) scale(0.94); }
+  }
+  @keyframes orb-b {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    40%       { transform: translate(40px, -48px) scale(1.10); }
+    75%       { transform: translate(-24px, 30px) scale(0.96); }
+  }
+
+  /* -------------------------------------------------------------- WATERMARK */
+  .cover__wm {
+    position: absolute; right: -2vw; bottom: -14vh; z-index: 0;
+    font-family: var(--font-serif); font-weight: 500; font-size: 62vh; line-height: 0.8;
+    color: var(--pine-100); opacity: 0.45; user-select: none; pointer-events: none;
+    letter-spacing: -0.04em;
+    animation: wm-drift 24s ease-in-out infinite;
+  }
+  @keyframes wm-drift {
+    0%, 100% { transform: translate(0, 0); }
+    38%       { transform: translate(-15px, -24px); }
+    70%       { transform: translate(10px, -10px); }
+  }
+
+  /* ------------------------------------------------------------------ INNER */
+  .cover__inner { position: relative; z-index: 1; max-width: 800px; }
+
+  /* ------------------------------------------------------------------ MARK */
+  .cover__mark {
+    width: 58px; height: 58px; margin: 0 auto 28px;
+    opacity: 0;
+    animation: mark-stamp 600ms cubic-bezier(0.16, 1, 0.3, 1) 80ms forwards;
+  }
+  @keyframes mark-stamp {
+    from { opacity: 0; transform: scale(0.62) rotate(-10deg); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  /* --------------------------------------------------------------- EYEBROW */
+  .cover__eyebrow {
+    color: var(--accent); margin-bottom: 22px;
+    opacity: 0;
+    animation: rise-in 580ms cubic-bezier(0.16, 1, 0.3, 1) 280ms forwards;
+  }
+
+  /* ------------------------------------------------------------------ NAME */
+  .cover__name {
+    font-family: var(--font-serif); font-weight: 500;
+    font-size: clamp(52px, 11vw, 96px);
+    line-height: 0.95; letter-spacing: -0.025em; margin: 0;
+    text-wrap: balance;
+  }
+  /* "Laura" rises up first */
+  .name-first {
+    display: inline-block; color: var(--fg-1);
+    opacity: 0;
+    animation: rise-in 680ms cubic-bezier(0.16, 1, 0.3, 1) 440ms forwards;
+  }
+  /* "Denby" wipes in left-to-right in amber — editorial reveal */
+  .name-last {
+    display: inline-block; color: var(--accent);
+    clip-path: inset(0 100% 0 0);
+    animation: reveal-ltr 720ms cubic-bezier(0.16, 1, 0.3, 1) 640ms forwards;
+  }
+  @keyframes reveal-ltr {
+    to { clip-path: inset(0 0% 0 0); }
+  }
+
+  /* --------------------------------------------------------------- TAGLINE */
+  .cover__tag {
+    font-size: clamp(17px, 2.4vw, 21px); line-height: 1.55;
+    color: var(--fg-2); max-width: 52ch; margin: 26px auto 0;
+    text-wrap: pretty;
+    opacity: 0;
+    animation: rise-in 620ms cubic-bezier(0.16, 1, 0.3, 1) 880ms forwards;
+  }
+
+  /* ----------------------------------------------------------------- BUTTON */
+  .cover__enter {
+    position: relative;
+    display: inline-flex; align-items: center; gap: 10px;
+    margin-top: 40px; cursor: pointer;
+    font-family: var(--font-sans); font-weight: 600; font-size: 16px;
+    padding: 15px 30px; border-radius: var(--r-pill); border: none;
+    background: var(--primary); color: var(--on-primary);
+    box-shadow: 0 8px 28px oklch(0.380 0.130 152 / 0.28);
+    transition:
+      background var(--dur) var(--ease-out),
+      transform var(--dur) var(--ease-out),
+      box-shadow var(--dur) var(--ease-out);
+    opacity: 0;
+    animation: rise-in 650ms cubic-bezier(0.16, 1, 0.3, 1) 1040ms forwards;
+  }
+  /* Amber pulse ring — the "come here" signal */
+  .cover__enter::before {
+    content: '';
+    position: absolute; inset: -4px;
+    border-radius: var(--r-pill);
+    border: 2px solid var(--accent);
+    opacity: 0;
+    animation: pulse-ring 2.8s cubic-bezier(0.22, 1, 0.36, 1) 2.4s infinite;
+    pointer-events: none;
+  }
+  @keyframes pulse-ring {
+    0%   { transform: scale(0.96); opacity: 0.7; }
+    100% { transform: scale(1.30); opacity: 0; }
+  }
+  .cover__enter:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 40px oklch(0.380 0.130 152 / 0.36);
+  }
+  .cover__enter:active { transform: scale(0.97); box-shadow: none; }
+  .cover__enter .ic {
+    width: 18px; height: 18px;
+    transition: transform var(--dur) var(--ease-out);
+  }
+  .cover__enter:hover .ic { transform: translateX(4px); }
+
+  /* ------------------------------------------------------------------- META */
+  .cover__meta {
+    position: absolute; bottom: 30px; left: 0; right: 0; z-index: 1;
+    display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap;
+    font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--fg-3);
+    opacity: 0;
+    animation: rise-in 500ms cubic-bezier(0.16, 1, 0.3, 1) 1180ms forwards;
+  }
+  /* Amber dots that pulse with a stagger — subtle heartbeat */
+  .cover__meta i {
+    width: 4px; height: 4px; border-radius: 999px;
+    background: var(--accent); display: inline-block;
+    animation: dot-pulse 2.4s ease-in-out 1.9s infinite;
+  }
+  .cover__meta i:nth-child(2) { animation-delay: 2.2s; }
+  .cover__meta i:nth-child(4) { animation-delay: 2.5s; }
+  @keyframes dot-pulse {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    50%       { opacity: 1; transform: scale(1.7); }
+  }
+
+  /* --------------------------------------------------------------- SHARED */
+  @keyframes rise-in {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  /* --------------------------------------------------- REDUCED MOTION */
+  @media (prefers-reduced-motion: reduce) {
+    .orb, .cover__wm, .cover__enter::before, .cover__meta i { animation: none !important; }
+    .cover__mark, .cover__eyebrow, .name-first, .cover__tag,
+    .cover__enter, .cover__meta {
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+    .name-last { animation: none !important; clip-path: none !important; }
+    body.leaving .cover { transition: none; }
+  }
+
+  @media (max-width: 600px) { .cover__meta { position: static; margin-top: 48px; } }
+</style>
+</head>
+<body>
+  <main class="cover" id="cover">
+    <!-- Ambient colour orbs -->
+    <div class="orb orb--pine" aria-hidden="true"></div>
+    <div class="orb orb--clay"  aria-hidden="true"></div>
+
+    <div class="cover__wm" aria-hidden="true">L</div>
+
+    <div class="cover__inner">
+      <div class="cover__mark">
+        <img src="assets/mark.svg" alt="" width="58" height="58">
+      </div>
+
+      <div class="eyebrow cover__eyebrow">IT Business Analyst &nbsp;·&nbsp; Sydney, Australia</div>
+
+      <h1 class="cover__name">
+        <span class="name-first">Laura</span> <span class="name-last">Denby</span>
+      </h1>
+
+      <p class="cover__tag">
+        Thirteen years turning complex business needs into intuitive, impactful digital
+        products, with AI built into every step of the practice.
+      </p>
+
+      <button class="cover__enter" id="enter" aria-label="Enter portfolio">
+        Enter portfolio <i class="ic" data-lucide="arrow-right"></i>
+      </button>
+    </div>
+
+    <div class="cover__meta">
+      <span id="years-counter">13 years</span><i></i><span>Agile · Scrum</span><i></i><span>AI-assisted delivery</span>
+    </div>
+  </main>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script>
+    lucide.createIcons();
+
+    // Safety net: if any animation fails to fire, force everything visible.
+    setTimeout(function () {
+      var sel = '.cover__mark, .cover__eyebrow, .name-first, .cover__tag, .cover__enter, .cover__meta';
+      document.querySelectorAll(sel).forEach(function (e) {
+        e.style.opacity = '1'; e.style.transform = 'none';
+      });
+      document.querySelector('.name-last').style.clipPath = 'none';
+    }, 2400);
+
+    // Animated counter: 0 → 13 years, starts as the meta row fades in.
+    (function () {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var el = document.getElementById('years-counter');
+      setTimeout(function () {
+        var start = performance.now();
+        var dur = 1100;
+        (function tick(now) {
+          var t = Math.min((now - start) / dur, 1);
+          var eased = 1 - Math.pow(1 - t, 3);   // ease-out cubic
+          el.textContent = Math.round(eased * 13) + ' years';
+          if (t < 1) requestAnimationFrame(tick);
+        })(performance.now());
+      }, 1380);
+    })();
+
+    // Page exit transition.
+    function enter() {
+      document.body.classList.add('leaving');
+      setTimeout(function () { window.location.href = 'about.html'; }, 440);
+    }
+    document.getElementById('enter').addEventListener('click', enter);
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); enter(); }
+    });
+  </script>
+</body>
+</html>

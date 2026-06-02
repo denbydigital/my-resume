@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin:0; padding:28px 32px; background:var(--bg); }
+  .name { font-family:var(--font-mono); font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--fg-2); margin-bottom:18px; }
+  .row { display:flex; gap:16px; align-items:flex-end; flex-wrap:wrap; }
+  .item { display:flex; flex-direction:column; align-items:center; gap:9px; }
+  .lab { font-family:var(--font-mono); font-size:10px; color:var(--fg-3); }
+  .btn { font-family:var(--font-sans); font-weight:600; font-size:15px; padding:11px 20px; border-radius:8px; border:1px solid transparent; background:var(--pine-600); color:#fff; }
+  .hover { background:var(--pine-700); }
+  .press { background:var(--pine-800); transform:scale(.985); }
+  .focus { box-shadow:0 0 0 3px rgba(31,110,92,.32); }
+  .disabled { background:var(--stone-200); color:var(--stone-400); }
+</style>
+</head>
+<body>
+  <div class="name">Button states</div>
+  <div class="row">
+    <div class="item"><button class="btn">Default</button><span class="lab">default</span></div>
+    <div class="item"><button class="btn hover">Hover</button><span class="lab">pine-700</span></div>
+    <div class="item"><button class="btn press">Press</button><span class="lab">pine-800 · scale .985</span></div>
+    <div class="item"><button class="btn focus">Focus</button><span class="lab">3px ring</span></div>
+    <div class="item"><button class="btn disabled">Disabled</button><span class="lab">disabled</span></div>
+  </div>
+</body>
+</html>

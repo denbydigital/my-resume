@@ -1,0 +1,278 @@
+/* ============================================================================
+   LAURA DENBY — BRAND SYSTEM
+   Direction: Ink & Leaf — deep forest green authority, warm amber accent, pure white ground.
+   ----------------------------------------------------------------------------
+   Fonts are loaded from Google Fonts (see @import below). If you need an
+   offline / self-hosted build, drop the .woff2 files into ./fonts and swap the
+   @import for @font-face rules. Families:
+     - Newsreader      → warm humanist serif, for display & editorial headlines
+     - Hanken Grotesk  → humanist sans, for UI + body
+     - IBM Plex Mono   → technical mono, for eyebrows/kickers, labels, code
+   ============================================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* ---------------------------------------------------------------------- */
+  /* FONT FAMILIES                                                          */
+  /* ---------------------------------------------------------------------- */
+  --font-serif: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --font-sans:  'Hanken Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono:  'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* ---------------------------------------------------------------------- */
+  /* CORE PALETTE — Direction: Ink & Leaf (OKLCH)                         */
+  /* ---------------------------------------------------------------------- */
+
+  /* Stone — structural neutral (borders, dividers, muted containers) */
+  --stone-50:  oklch(0.980 0.005 90);
+  --stone-100: oklch(0.950 0.008 90);
+  --stone-200: oklch(0.900 0.010 90);
+  --stone-300: oklch(0.830 0.012 90);
+  --stone-400: oklch(0.760 0.012 90);
+  --stone-500: oklch(0.680 0.012 90);
+  --stone-600: oklch(0.550 0.010 90);
+  --stone-700: oklch(0.420 0.010 90);
+  --stone-800: oklch(0.300 0.008 90);
+  --stone-900: oklch(0.200 0.008 90);
+
+  /* Primary — Forest Green (hue 152) — authority, identity */
+  --pine-50:  oklch(0.970 0.015 152);
+  --pine-100: oklch(0.930 0.030 152);
+  --pine-200: oklch(0.860 0.055 152);
+  --pine-300: oklch(0.760 0.090 152);
+  --pine-400: oklch(0.640 0.115 152);
+  --pine-500: oklch(0.520 0.128 152);
+  --pine-600: oklch(0.380 0.130 152);   /* base — buttons, links */
+  --pine-700: oklch(0.310 0.115 152);
+  --pine-800: oklch(0.240 0.090 152);
+  --pine-900: oklch(0.170 0.060 152);
+
+  /* Accent — Amber Gold (hue 55) — warmth, the one human note */
+  --clay-50:  oklch(0.970 0.020 55);
+  --clay-100: oklch(0.930 0.045 55);
+  --clay-200: oklch(0.870 0.075 55);
+  --clay-300: oklch(0.820 0.100 55);
+  --clay-400: oklch(0.750 0.120 55);
+  --clay-500: oklch(0.680 0.130 55);    /* base */
+  --clay-600: oklch(0.580 0.125 55);
+  --clay-700: oklch(0.460 0.110 55);
+  --clay-800: oklch(0.340 0.085 55);
+  --clay-900: oklch(0.220 0.060 55);
+
+  /* Semantic states (tuned to sit beside Pine + Clay) */
+  --success:    oklch(0.42 0.130 145);
+  --success-bg: oklch(0.95 0.030 145);
+  --warning:    oklch(0.58 0.140 65);
+  --warning-bg: oklch(0.95 0.035 65);
+  --error:      oklch(0.48 0.150 22);
+  --error-bg:   oklch(0.96 0.025 22);
+  --info:       oklch(0.45 0.100 220);
+  --info-bg:    oklch(0.95 0.025 220);
+
+  /* ---------------------------------------------------------------------- */
+  /* SEMANTIC ROLES (light theme)                                           */
+  /* ---------------------------------------------------------------------- */
+  --bg:          oklch(1.000 0.000 0);          /* page background — pure white */
+  --bg-sunk:     oklch(0.955 0.008 152);        /* recessed sections — faint green tint */
+  --surface:     oklch(0.970 0.000 0);          /* cards, raised surfaces */
+  --surface-2:   oklch(0.955 0.008 152);        /* nested/alt surfaces */
+  --ink:         var(--pine-900);               /* dark sections / inverse bg */
+
+  --fg-1:        oklch(0.150 0.020 152);        /* primary text */
+  --fg-2:        oklch(0.480 0.012 152);        /* secondary text */
+  --fg-3:        oklch(0.580 0.010 152);        /* muted / captions */
+  --fg-on-dark:  oklch(0.960 0.005 152);        /* text on dark surfaces */
+  --fg-on-dark-2:oklch(0.720 0.010 152);        /* secondary text on dark */
+
+  --border:        oklch(0.880 0.008 152);      /* default hairline */
+  --border-strong: oklch(0.800 0.012 152);      /* emphasized divider */
+  --border-on-dark: oklch(0.960 0.005 152 / 0.14);
+
+  --primary:        var(--pine-600);            /* primary actions, links */
+  --primary-hover:  var(--pine-700);
+  --primary-press:  var(--pine-800);
+  --primary-soft:   var(--pine-50);
+  --on-primary:     oklch(1.000 0.000 0);
+
+  --accent:         var(--clay-500);            /* highlights, eyebrows */
+  --accent-hover:   var(--clay-600);
+  --accent-soft:    var(--clay-50);
+  --on-accent:      oklch(1.000 0.000 0);
+
+  --focus-ring:  oklch(0.380 0.130 152 / 0.30);
+
+  /* ---------------------------------------------------------------------- */
+  /* RADII                                                                  */
+  /* ---------------------------------------------------------------------- */
+  --r-xs: 6px;
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-xl: 22px;
+  --r-pill: 999px;
+
+  /* ---------------------------------------------------------------------- */
+  /* SPACING (4px base)                                                     */
+  /* ---------------------------------------------------------------------- */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 48px;
+  --sp-8: 64px;
+  --sp-9: 96px;
+  --sp-10: 128px;
+
+  /* ---------------------------------------------------------------------- */
+  /* SHADOWS — soft, warm, low (calm elevation)                            */
+  /* Tinted with warm ink rather than pure black.                          */
+  /* ---------------------------------------------------------------------- */
+  --shadow-xs: 0 1px 2px oklch(0.150 0.020 152 / 0.06);
+  --shadow-sm: 0 1px 2px oklch(0.150 0.020 152 / 0.05), 0 2px 6px oklch(0.150 0.020 152 / 0.05);
+  --shadow-md: 0 2px 4px oklch(0.150 0.020 152 / 0.05), 0 8px 20px oklch(0.150 0.020 152 / 0.07);
+  --shadow-lg: 0 4px 8px oklch(0.150 0.020 152 / 0.05), 0 18px 40px oklch(0.150 0.020 152 / 0.10);
+  --shadow-focus: 0 0 0 3px var(--focus-ring);
+
+  /* ---------------------------------------------------------------------- */
+  /* MOTION                                                                 */
+  /* ---------------------------------------------------------------------- */
+  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0.05, 0.36, 1);
+  --dur-fast: 120ms;
+  --dur: 200ms;
+  --dur-slow: 360ms;
+
+  /* ---------------------------------------------------------------------- */
+  /* TYPE TOKENS                                                            */
+  /* ---------------------------------------------------------------------- */
+  --fs-display: 64px;
+  --fs-h1: 44px;
+  --fs-h2: 32px;
+  --fs-h3: 24px;
+  --fs-h4: 19px;
+  --fs-body-lg: 19px;
+  --fs-body: 16px;
+  --fs-small: 14px;
+  --fs-caption: 13px;
+  --fs-eyebrow: 12.5px;
+
+  --lh-tight: 1.08;
+  --lh-snug: 1.25;
+  --lh-normal: 1.5;
+  --lh-relaxed: 1.65;
+
+  --tracking-eyebrow: 0.14em;
+  --tracking-tight: -0.02em;
+}
+
+/* ============================================================================
+   SEMANTIC TYPE CLASSES
+   Use these directly, or copy the rules into your own selectors.
+   ============================================================================ */
+
+.display {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: var(--fs-display);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--fg-1);
+}
+
+h1, .h1 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: var(--fs-h1);
+  line-height: 1.1;
+  letter-spacing: var(--tracking-tight);
+  color: var(--fg-1);
+}
+
+h2, .h2 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: var(--fs-h2);
+  line-height: var(--lh-snug);
+  letter-spacing: -0.01em;
+  color: var(--fg-1);
+}
+
+h3, .h3 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: var(--fs-h3);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--fg-1);
+}
+
+h4, .h4 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: var(--fs-h4);
+  line-height: 1.4;
+  color: var(--fg-1);
+}
+
+.body-lg {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: var(--fs-body-lg);
+  line-height: var(--lh-relaxed);
+  color: var(--fg-2);
+}
+
+p, .body {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: var(--fs-body);
+  line-height: var(--lh-relaxed);
+  color: var(--fg-2);
+}
+
+.small {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: var(--fs-small);
+  line-height: var(--lh-normal);
+  color: var(--fg-2);
+}
+
+.caption {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: var(--fs-caption);
+  line-height: var(--lh-normal);
+  color: var(--fg-3);
+}
+
+/* Eyebrow / kicker — the signature label style of the brand */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: var(--fs-eyebrow);
+  line-height: 1;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+code, .code {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 0.9em;
+  color: var(--pine-600);
+  background: var(--pine-50);
+  padding: 0.1em 0.4em;
+  border-radius: var(--r-xs);
+}
+
+/* Editorial serif italic — a warm, slightly playful accent */
+.serif-italic {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+}

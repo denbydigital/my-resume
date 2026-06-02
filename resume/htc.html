@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Her Tech Circle · Laura Denby</title>
+<link rel="stylesheet" href="styles/tokens.css">
+<style>
+  /* ===== Her Tech Circle — independent neon microsite ===== */
+  :root {
+    --htc-pink: #FF2D9B;
+    --htc-purple: #6D4AFF;
+    --htc-orange: #FF5A1F;
+    --htc-green: #14CD7E;
+    --htc-ink: #0D0820;
+    --htc-ink-2: #160F33;
+    --htc-surface: #1B1340;
+    --htc-text: #FFFFFF;
+    --htc-muted: #B9B1E0;
+    --htc-grad: linear-gradient(105deg, #FF2D9B 0%, #6D4AFF 38%, #FF5A1F 70%, #14CD7E 100%);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--htc-ink); color: var(--htc-text);
+    font-family: var(--font-sans); -webkit-font-smoothing: antialiased; overflow-x: hidden;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { display: block; max-width: 100%; }
+  .wrap { width: 100%; max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+  .mono { font-family: var(--font-mono); }
+
+  /* top bar */
+  .htc-bar { position: sticky; top: 0; z-index: 50; backdrop-filter: blur(12px); background: rgba(13,8,32,0.66); border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .htc-bar__in { max-width: 1180px; margin: 0 auto; padding: 14px 32px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .htc-back { display: inline-flex; align-items: center; gap: 9px; font-weight: 600; font-size: 14.5px; color: var(--htc-muted); transition: color .2s; }
+  .htc-back:hover { color: #fff; }
+  .htc-back .ic { width: 17px; height: 17px; }
+  .htc-bar__site { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: 14px; padding: 9px 16px; border-radius: 999px; background: var(--htc-pink); color: #fff; box-shadow: 0 0 22px rgba(255,45,155,0.5); transition: transform .2s, box-shadow .2s; }
+  .htc-bar__site:hover { transform: translateY(-1px); box-shadow: 0 0 30px rgba(255,45,155,0.75); }
+  .htc-bar__site .ic { width: 15px; height: 15px; }
+
+  /* hero */
+  .hero { position: relative; text-align: center; padding: 84px 24px 70px; overflow: hidden; }
+  .blob { position: absolute; border-radius: 50%; filter: blur(90px); opacity: 0.55; z-index: 0; pointer-events: none; }
+  .blob.b1 { width: 480px; height: 480px; background: var(--htc-pink); top: -160px; left: -120px; }
+  .blob.b2 { width: 420px; height: 420px; background: var(--htc-purple); top: -90px; right: -100px; opacity: 0.5; }
+  .blob.b3 { width: 360px; height: 360px; background: var(--htc-green); bottom: -160px; left: 30%; opacity: 0.32; }
+  .blob.b4 { width: 300px; height: 300px; background: var(--htc-orange); bottom: -120px; right: 8%; opacity: 0.3; }
+  .hero__in { position: relative; z-index: 1; max-width: 880px; margin: 0 auto; }
+  .htc-logo { width: 92px; height: 92px; margin: 0 auto 26px; animation: spin 26s linear infinite; filter: drop-shadow(0 0 24px rgba(109,74,255,0.5)); }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .kicker { font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.32em; text-transform: uppercase; color: #fff; text-shadow: 0 0 14px rgba(255,45,155,0.9), 0 0 28px rgba(109,74,255,0.6); margin-bottom: 26px; }
+  .hero h1 { font-family: var(--font-sans); font-weight: 800; font-size: clamp(40px, 7vw, 78px); line-height: 1.02; letter-spacing: -0.03em; margin: 0; color: #fff; }
+  .grad { background: var(--htc-grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .hero p { font-size: clamp(17px, 2.3vw, 21px); line-height: 1.6; color: var(--htc-muted); max-width: 56ch; margin: 26px auto 0; }
+  .hero p b { color: #fff; font-weight: 600; }
+  .hero__cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 38px; }
+  .btn { display: inline-flex; align-items: center; gap: 9px; font-weight: 700; font-size: 15.5px; padding: 15px 28px; border-radius: 999px; cursor: pointer; border: none; transition: transform .2s, box-shadow .2s, background .2s; }
+  .btn .ic { width: 18px; height: 18px; }
+  .btn--neon { background: var(--htc-grad); color: #fff; box-shadow: 0 8px 30px rgba(255,45,155,0.42); }
+  .btn--neon:hover { transform: translateY(-2px); box-shadow: 0 10px 40px rgba(109,74,255,0.6); }
+  .btn--ghost { background: rgba(255,255,255,0.06); color: #fff; border: 1px solid rgba(255,255,255,0.18); }
+  .btn--ghost:hover { background: rgba(255,255,255,0.12); transform: translateY(-2px); }
+
+  /* gallery bento */
+  .section { padding: 56px 0; position: relative; z-index: 1; }
+  .gallery { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 188px; gap: 14px; }
+  .gallery figure { margin: 0; overflow: hidden; border-radius: 18px; position: relative; }
+  .gallery img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s var(--ease-out); }
+  .gallery figure:hover img { transform: scale(1.06); }
+  .gallery figure::after { content: ''; position: absolute; inset: 0; border-radius: 18px; box-shadow: inset 0 0 0 2px rgba(255,255,255,0.10); transition: box-shadow .3s; }
+  .gallery figure:hover::after { box-shadow: inset 0 0 0 2px var(--htc-pink), 0 0 24px rgba(255,45,155,0.4); }
+  .g-a { grid-column: span 2; grid-row: span 2; }
+  .g-b { grid-column: span 1; grid-row: span 2; }
+  .g-c { grid-column: span 1; grid-row: span 2; }
+  .g-d { grid-column: span 4; grid-row: span 1; }
+
+  /* role cards */
+  .head { text-align: center; max-width: 640px; margin: 0 auto 40px; }
+  .head .eyebrow { font-family: var(--font-mono); font-size: 12.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--htc-pink); }
+  .head h2 { font-family: var(--font-sans); font-weight: 800; font-size: clamp(28px, 4.5vw, 42px); letter-spacing: -0.02em; margin: 14px 0 0; color: #fff; }
+  .roles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .role { background: var(--htc-surface); border: 1px solid rgba(255,255,255,0.08); border-radius: 22px; padding: 30px 26px; position: relative; overflow: hidden; transition: transform .25s, border-color .25s; }
+  .role:hover { transform: translateY(-4px); }
+  .role::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; }
+  .role.r1::before { background: var(--htc-pink); } .role.r1:hover { border-color: var(--htc-pink); }
+  .role.r2::before { background: var(--htc-purple); } .role.r2:hover { border-color: var(--htc-purple); }
+  .role.r3::before { background: var(--htc-green); } .role.r3:hover { border-color: var(--htc-green); }
+  .role__ic { width: 54px; height: 54px; border-radius: 15px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+  .role__ic .ic { width: 26px; height: 26px; color: #fff; }
+  .role.r1 .role__ic { background: rgba(255,45,155,0.16); box-shadow: 0 0 24px rgba(255,45,155,0.3); } .role.r1 .role__ic .ic { color: var(--htc-pink); }
+  .role.r2 .role__ic { background: rgba(109,74,255,0.16); box-shadow: 0 0 24px rgba(109,74,255,0.3); } .role.r2 .role__ic .ic { color: #9d83ff; }
+  .role.r3 .role__ic { background: rgba(20,205,126,0.16); box-shadow: 0 0 24px rgba(20,205,126,0.3); } .role.r3 .role__ic .ic { color: var(--htc-green); }
+  .role .badge { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--htc-muted); }
+  .role h3 { font-size: 21px; font-weight: 700; margin: 6px 0 10px; letter-spacing: -0.01em; color: #fff; }
+  .role p { font-size: 14.5px; line-height: 1.6; color: var(--htc-muted); margin: 0; }
+
+  /* statement band */
+  .band { margin: 24px 0; }
+  .band__in { background: var(--htc-grad); border-radius: 28px; padding: 56px 48px; text-align: center; position: relative; overflow: hidden; }
+  .band__in p { font-family: var(--font-serif); font-weight: 500; font-size: clamp(24px, 3.6vw, 38px); line-height: 1.25; color: #fff; margin: 0; max-width: 22ch; margin-inline: auto; letter-spacing: -0.01em; text-shadow: 0 2px 20px rgba(0,0,0,0.18); }
+  .band__by { margin-top: 18px; font-family: var(--font-mono); font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.85); }
+
+  /* footer */
+  .htc-footer { border-top: 1px solid rgba(255,255,255,0.08); padding: 48px 0 56px; text-align: center; }
+  .htc-footer img { width: 48px; height: 48px; margin: 0 auto 18px; }
+  .htc-footer h3 { font-weight: 800; font-size: 24px; margin: 0 0 8px; letter-spacing: -0.01em; color: #fff; }
+  .htc-footer p { color: var(--htc-muted); margin: 0 0 26px; font-size: 15px; }
+  .htc-foot-links { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .htc-disc { margin-top: 34px; font-size: 12px; color: rgba(185,177,224,0.6); }
+
+  @media (max-width: 860px) {
+    .roles { grid-template-columns: 1fr; }
+    .gallery { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 160px; }
+    .g-a { grid-column: span 2; grid-row: span 2; }
+    .g-b, .g-c { grid-column: span 1; grid-row: span 2; }
+    .g-d { grid-column: span 2; }
+  }
+  @media (prefers-reduced-motion: reduce) { .htc-logo { animation: none; } }
+</style>
+</head>
+<body>
+  <div class="htc-bar">
+    <div class="htc-bar__in">
+      <a class="htc-back" href="about.html"><i class="ic" data-lucide="arrow-left"></i> Laura Denby</a>
+      <a class="htc-bar__site" href="https://www.hertechcircle.org/" target="_blank" rel="noopener">hertechcircle.org <i class="ic" data-lucide="arrow-up-right"></i></a>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="blob b4"></div>
+    <div class="hero__in">
+      <img class="htc-logo" src="assets/htc-logo.png" alt="Her Tech Circle">
+      <div class="kicker">Her Tech Circle</div>
+      <h1>Lifting the women <br><span class="grad">coming up behind me.</span></h1>
+      <p>I'm a proud member of <b>Her Tech Circle</b>, the community formerly known as Girls in Tech Australia. Beyond showing up, I <b>help run their website</b> and <b>launched their regional scholarship programme.</b></p>
+      <div class="hero__cta">
+        <a class="btn btn--neon" href="https://www.hertechcircle.org/" target="_blank" rel="noopener">Visit Her Tech Circle <i class="ic" data-lucide="arrow-up-right"></i></a>
+        <a class="btn btn--ghost" href="#role">See what I do <i class="ic" data-lucide="arrow-down"></i></a>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="gallery">
+        <figure class="g-a"><img src="assets/htc-neon.jpg" alt="Her Tech Circle crew at the neon sign"></figure>
+        <figure class="g-b"><img src="assets/htc-warehouse.png" alt="The crew under the 'Home of the AI Workforce' neon"></figure>
+        <figure class="g-c"><img src="assets/htc-breakfast.png" alt="Her Tech Circle IWD Breakfast 2026"></figure>
+        <figure class="g-d"><img src="assets/htc-crew.jpg" alt="Her Tech Circle #PowerSkill Panel crew"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="role" style="padding-top:28px">
+    <div class="wrap">
+      <div class="head">
+        <div class="eyebrow">My role</div>
+        <h2>More than a member.</h2>
+      </div>
+      <div class="roles">
+        <article class="role r1">
+          <div class="role__ic"><i class="ic" data-lucide="users"></i></div>
+          <div class="badge">Community</div>
+          <h3>An active member</h3>
+          <p>I show up for the events, the panels and the people, building the network that backed my own path in tech.</p>
+        </article>
+        <article class="role r2">
+          <div class="role__ic"><i class="ic" data-lucide="layout-template"></i></div>
+          <div class="badge">Hands-on</div>
+          <h3>I help run the website</h3>
+          <p>From content to structure, I help keep hertechcircle.org sharp, putting my BA and web skills to work for the cause.</p>
+        </article>
+        <article class="role r3">
+          <div class="role__ic"><i class="ic" data-lucide="graduation-cap"></i></div>
+          <div class="badge">Initiative I led</div>
+          <h3>Regional Scholarship Programme</h3>
+          <p>I launched HTC's regional scholarship programme, opening the door wider for women in tech beyond the big cities.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="band__in">
+        <p>Lifting women in tech isn't a side project. It's the point.</p>
+        <div class="band__by">Laura Denby × Her Tech Circle</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="htc-footer">
+    <div class="wrap">
+      <img src="assets/htc-logo.png" alt="">
+      <h3>Her Tech Circle</h3>
+      <p>Formerly Girls in Tech Australia</p>
+      <div class="htc-foot-links">
+        <a class="btn btn--neon" href="https://www.hertechcircle.org/" target="_blank" rel="noopener">hertechcircle.org <i class="ic" data-lucide="arrow-up-right"></i></a>
+        <a class="btn btn--ghost" href="credentials.html"><i class="ic" data-lucide="arrow-left"></i> Back to Laura's site</a>
+      </div>
+      <div class="htc-disc">Photos courtesy of Her Tech Circle events · logo © Her Tech Circle</div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

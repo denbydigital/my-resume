@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin:0; padding:26px 32px; background:var(--bg); }
+  .name { font-family:var(--font-mono); font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--fg-2); margin-bottom:18px; }
+  .row { display:flex; gap:16px; }
+  .col { flex:1; border-radius:12px; padding:16px 18px; }
+  .do { background:var(--success-bg); }
+  .dont { background:var(--error-bg); }
+  .hd { display:flex; align-items:center; gap:7px; font-family:var(--font-sans); font-weight:700; font-size:12.5px; margin-bottom:10px; }
+  .do .hd { color:#2F7D5B; }
+  .dont .hd { color:#B4472F; }
+  .hd svg { width:15px; height:15px; }
+  .q { font-family:var(--font-serif); font-size:16px; line-height:1.45; color:var(--fg-1); }
+  .dont .q { text-decoration:line-through; text-decoration-color:rgba(180,71,47,.4); }
+</style>
+</head>
+<body>
+  <div class="name">Voice — warm, credible, sentence case</div>
+  <div class="row">
+    <div class="col do">
+      <div class="hd"><i data-lucide="check"></i> Sounds like us</div>
+      <div class="q">"I help growing teams ship the right thing, faster."</div>
+    </div>
+    <div class="col dont">
+      <div class="hd"><i data-lucide="x"></i> Not us</div>
+      <div class="q">"Leveraging Best-in-Class Synergies to 10x Your Velocity!"</div>
+    </div>
+  </div>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

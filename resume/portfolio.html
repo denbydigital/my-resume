@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio · Laura Denby</title>
+<link rel="stylesheet" href="styles/tokens.css">
+<link rel="stylesheet" href="styles/site.css">
+<style>
+  .note { font-size: 13.5px; color: var(--fg-3); margin-top: 16px; display: flex; align-items: center; gap: 8px; }
+  .note .ic { width: 15px; height: 15px; flex: none; }
+  .proj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .proj-card {
+    text-align: left; cursor: pointer; font-family: inherit; width: 100%;
+    background: var(--surface); border: 1px solid var(--stone-200); border-radius: var(--r-lg);
+    box-shadow: var(--shadow-sm); padding: 24px 24px 22px; display: flex; flex-direction: column; gap: 10px;
+    transition: box-shadow var(--dur) var(--ease-out), border-color var(--dur) var(--ease-out), transform var(--dur) var(--ease-out);
+  }
+  .proj-card:hover { box-shadow: var(--shadow-md); border-color: var(--stone-300); transform: translateY(-2px); }
+  .proj-card__top { display: flex; align-items: center; justify-content: space-between; }
+  .proj-card__co { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.05em; color: var(--fg-3); text-transform: uppercase; }
+  .proj-card__open { width: 30px; height: 30px; border-radius: 999px; background: var(--stone-100); display: flex; align-items: center; justify-content: center; color: var(--pine-700); transition: background var(--dur), color var(--dur); }
+  .proj-card__open .ic { width: 16px; height: 16px; }
+  .proj-card:hover .proj-card__open { background: var(--pine-600); color: #fff; }
+  .proj-card h3 { font-family: var(--font-serif); font-weight: 500; font-size: 21px; letter-spacing: -0.01em; margin: 2px 0 0; }
+  .proj-card p { font-size: 14px; line-height: 1.55; color: var(--fg-2); margin: 0; flex: 1; }
+  .proj-card .tags { margin-top: 4px; }
+
+  /* modal */
+  .modal[hidden] { display: none; }
+  .modal { position: fixed; inset: 0; z-index: 100; display: flex; align-items: flex-end; justify-content: center; }
+  .modal__backdrop { position: absolute; inset: 0; background: rgba(33,30,24,0.42); backdrop-filter: blur(2px); animation: fade var(--dur) var(--ease-out); }
+  @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+  .modal__panel {
+    position: relative; background: var(--surface); width: 100%; max-width: 720px; max-height: 92vh; overflow-y: auto;
+    border-radius: var(--r-xl) var(--r-xl) 0 0; box-shadow: var(--shadow-lg); padding: 40px 44px 48px;
+    animation: slideup 360ms var(--ease-out);
+  }
+  @keyframes slideup { from { transform: translateY(40px); opacity: 0; } to { transform: none; opacity: 1; } }
+  .modal__x { position: absolute; top: 18px; right: 18px; width: 38px; height: 38px; border-radius: 999px; border: 1px solid var(--stone-200); background: var(--surface); cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--fg-2); transition: background var(--dur), color var(--dur); }
+  .modal__x:hover { background: var(--stone-100); color: var(--fg-1); }
+  .modal__x .ic { width: 18px; height: 18px; }
+  .modal__co { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--clay-600); }
+  .modal__panel h2 { font-family: var(--font-serif); font-weight: 500; font-size: 30px; letter-spacing: -0.01em; margin: 10px 0 14px; max-width: 22ch; }
+  .modal__panel .lede { font-size: 16px; margin: 14px 0 0; }
+  .modal__body { margin-top: 26px; border-top: 1px solid var(--stone-200); padding-top: 24px; }
+  .modal__body h4 { font-size: 12.5px; font-family: var(--font-mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-3); margin: 0 0 14px; }
+  .modal__body h4:not(:first-child) { margin-top: 28px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chips span { font-size: 13px; padding: 5px 12px; border-radius: var(--r-sm); background: var(--pine-50); color: var(--pine-700); }
+
+  @media (max-width: 760px) { .proj-grid { grid-template-columns: 1fr; } .modal__panel { padding: 34px 22px 40px; } .modal__panel h2 { font-size: 25px; } }
+  @media (min-width: 761px) { .modal { align-items: center; } .modal__panel { border-radius: var(--r-xl); } }
+</style>
+</head>
+<body data-page="portfolio">
+  <header id="site-header"></header>
+
+  <main class="page">
+    <section class="page-hero">
+      <div class="wrap">
+        <div class="eyebrow">Portfolio</div>
+        <h1>Eleven products, a dozen years of evidence.</h1>
+        <p class="lede measure">A selection of products I've helped shape, in reverse-chronological order, across nine industries. Tap any project for the detail.</p>
+        <div class="note"><i class="ic" data-lucide="info"></i> Some product names have been changed for privacy. Real evidence available on request.</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="proj-grid" id="grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <div class="modal" id="modal" hidden>
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="m-title">
+      <button class="modal__x" data-close aria-label="Close"><i class="ic" data-lucide="x"></i></button>
+      <div class="modal__co" id="m-co"></div>
+      <h2 id="m-title"></h2>
+      <div class="tags" id="m-tags"></div>
+      <p class="lede" id="m-blurb"></p>
+      <div class="modal__body" id="m-body"></div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="site.js"></script>
+  <script src="portfolio-data.js"></script>
+  <script>
+    (function () {
+      var clay = { ai: 1 };
+      function tagHTML(t) {
+        var k = t.toLowerCase();
+        var cls = k === 'ai' ? 'tag tag--clay' : 'tag tag--pine';
+        return '<span class="' + cls + '">#' + t + '</span>';
+      }
+      var grid = document.getElementById('grid');
+      grid.innerHTML = PROJECTS.map(function (p, i) {
+        return (
+          '<button class="proj-card" data-id="' + i + '">' +
+            '<div class="proj-card__top"><span class="proj-card__co">' + p.company + ' · ' + p.period + '</span>' +
+            '<span class="proj-card__open"><i class="ic" data-lucide="arrow-up-right"></i></span></div>' +
+            '<h3>' + p.title + '</h3>' +
+            '<p>' + p.blurb + '</p>' +
+            '<div class="tags">' + p.tags.map(tagHTML).join('') + '</div>' +
+          '</button>'
+        );
+      }).join('');
+
+      var modal = document.getElementById('modal');
+      function open(i) {
+        var p = PROJECTS[i];
+        document.getElementById('m-co').textContent = p.company + ' · ' + p.period;
+        document.getElementById('m-title').textContent = p.title;
+        document.getElementById('m-tags').innerHTML = p.tags.map(tagHTML).join('');
+        document.getElementById('m-blurb').textContent = p.blurb;
+        var body = '<h4>What I did</h4><ul class="ticks">' +
+          p.detail.map(function (d) { return '<li><i class="ic" data-lucide="check"></i>' + d + '</li>'; }).join('') + '</ul>';
+        if (p.features && p.features.length) {
+          body += '<h4>' + (p.featuresTitle || 'Selected features') + '</h4><div class="chips">' +
+            p.features.map(function (f) { return '<span>' + f + '</span>'; }).join('') + '</div>';
+        }
+        document.getElementById('m-body').innerHTML = body;
+        modal.hidden = false;
+        document.body.style.overflow = 'hidden';
+        if (window.lucide) window.lucide.createIcons();
+      }
+      function close() { modal.hidden = true; document.body.style.overflow = ''; }
+
+      grid.addEventListener('click', function (e) {
+        var card = e.target.closest('.proj-card');
+        if (card) open(+card.dataset.id);
+      });
+      modal.addEventListener('click', function (e) { if (e.target.hasAttribute('data-close')) close(); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !modal.hidden) close(); });
+
+      if (window.lucide) window.lucide.createIcons();
+    })();
+  </script>
+</body>
+</html>

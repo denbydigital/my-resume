@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin:0; padding:26px 32px; background:var(--bg); }
+  .name { font-family:var(--font-mono); font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--fg-2); margin-bottom:18px; }
+  .grid { display:grid; grid-template-columns:1fr 1fr; gap:18px 24px; max-width:600px; }
+  label { font-family:var(--font-sans); font-size:13px; font-weight:600; color:var(--fg-1); display:block; margin-bottom:7px; }
+  .field { display:flex; align-items:center; gap:9px; background:#fff; border:1px solid var(--stone-300); border-radius:8px; padding:11px 13px; }
+  .field svg { width:17px; height:17px; color:var(--fg-3); }
+  .field input { border:none; outline:none; font-family:var(--font-sans); font-size:14px; color:var(--fg-1); width:100%; background:transparent; }
+  .field.focused { border-color:var(--pine-600); box-shadow:0 0 0 3px rgba(31,110,92,.18); }
+  .hint { font-family:var(--font-sans); font-size:11.5px; color:var(--fg-3); margin-top:6px; }
+</style>
+</head>
+<body>
+  <div class="name">Form fields</div>
+  <div class="grid">
+    <div>
+      <label>Your name</label>
+      <div class="field"><i data-lucide="user"></i><input value="Dana Whitfield" readonly></div>
+    </div>
+    <div>
+      <label>Work email</label>
+      <div class="field focused"><i data-lucide="mail"></i><input value="dana@acme.io" readonly></div>
+      <div class="hint">Focused state · pine ring</div>
+    </div>
+  </div>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

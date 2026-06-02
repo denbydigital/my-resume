@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin:0; padding:24px 28px; background:var(--bg); }
+  .name { font-family:var(--font-mono); font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--fg-2); margin-bottom:18px; }
+  .row { display:flex; gap:20px; align-items:flex-end; }
+  .item { display:flex; flex-direction:column; align-items:center; gap:10px; }
+  .box { width:72px; height:72px; background:var(--pine-50); border:1.5px solid var(--pine-300); }
+  .lab b { font-family:var(--font-sans); font-size:12.5px; color:var(--fg-1); }
+  .lab span { font-family:var(--font-mono); font-size:10.5px; color:var(--fg-3); display:block; text-align:center; }
+</style>
+</head>
+<body>
+  <div class="name">Corner radii — friendly but grounded</div>
+  <div class="row">
+    <div class="item"><div class="box" style="border-radius:6px"></div><div class="lab"><b>xs</b><span>6px</span></div></div>
+    <div class="item"><div class="box" style="border-radius:8px"></div><div class="lab"><b>sm</b><span>8px · inputs</span></div></div>
+    <div class="item"><div class="box" style="border-radius:12px"></div><div class="lab"><b>md</b><span>12px</span></div></div>
+    <div class="item"><div class="box" style="border-radius:16px"></div><div class="lab"><b>lg</b><span>16px · cards</span></div></div>
+    <div class="item"><div class="box" style="border-radius:22px"></div><div class="lab"><b>xl</b><span>22px</span></div></div>
+    <div class="item"><div class="box" style="border-radius:999px"></div><div class="lab"><b>pill</b><span>tags</span></div></div>
+  </div>
+</body>
+</html>

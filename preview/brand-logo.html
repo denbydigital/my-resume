@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin:0; padding:30px 32px; background:var(--bg); display:flex; align-items:center; gap:48px; flex-wrap:wrap; }
+  .lockup-h { display:flex; align-items:center; gap:13px; }
+  .lockup-h img { width:44px; height:44px; }
+  .wm { font-family:var(--font-serif); font-weight:600; font-size:27px; color:var(--fg-1); letter-spacing:-.01em; line-height:1; white-space:nowrap; }
+  .lockup-v { display:flex; flex-direction:column; align-items:center; gap:12px; }
+  .lockup-v img { width:48px; height:48px; }
+  .lockup-v .wm { font-size:22px; }
+  .tag { font-family:var(--font-mono); font-size:10px; color:var(--fg-3); text-align:center; margin-top:14px; letter-spacing:.06em; }
+  .col { display:flex; flex-direction:column; align-items:center; }
+</style>
+</head>
+<body>
+  <div class="col">
+    <div class="lockup-h"><img src="../assets/mark.svg" alt=""><span class="wm">Avery Sloane</span></div>
+    <div class="tag">HORIZONTAL LOCKUP</div>
+  </div>
+  <div class="col">
+    <div class="lockup-v"><img src="../assets/mark.svg" alt=""><span class="wm">Avery Sloane</span></div>
+    <div class="tag">STACKED</div>
+  </div>
+  <div class="col">
+    <img src="../assets/mark.svg" alt="" style="width:52px;height:52px">
+    <div class="tag">MARK ONLY</div>
+  </div>
+</body>
+</html>

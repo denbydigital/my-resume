@@ -1,0 +1,146 @@
+/* portfolio-data.js — Laura Denby's product evidence, reverse-chronological. */
+var PROJECTS = [
+  {
+    title: 'FashionBiz B2B Portal Integration',
+    company: 'Olympic33', period: '2024 – Present',
+    tags: ['integration', 'dynamics365', 'ecommerce', 'AI'],
+    blurb: 'Full integration between a customer-facing B2B ecommerce portal and Microsoft Business Central, via BizCoLab / BCIP middleware.',
+    detail: [
+      'Mapped end-to-end integration flows for order management, payments, product sync and supplier workflows, as Mermaid sequence diagrams, state diagrams and happy / unhappy path flowcharts.',
+      'Produced structured epic &amp; feature tables for both the B2B Ecommerce and B2B Supplier platforms.',
+      'Developed a layered testing readiness model (L0 / L1 / L2) and structured test-approach documentation.',
+      'Managed client &amp; internal comms across JWT auth, Azure AD provisioning, S3 image storage, live chat and historical data migration.',
+      'Used Claude + MCP integrations (Azure DevOps, Microsoft 365, Figma) to accelerate artefact production and consolidate requirements from meeting transcripts.'
+    ]
+  },
+  {
+    title: 'Recruitment AI Automation',
+    company: 'Olympic33', period: 'Recent',
+    tags: ['AI', 'recruitment'],
+    blurb: 'An LLM platform for pitching candidates, generating proposals, cover letters, resumes and candidate reports.',
+    detail: [
+      'Gathered as-is requirements and unpacked them into a to-be way of working using Agile / Scrum.',
+      'Ran requirements &amp; design workshops; created mock-ups and wireframes in Figma.',
+      'Ran all scrum ceremonies and managed development-team escalations and blockers.',
+      'QA tested in staging and facilitated UAT workshops and observations before production.'
+    ],
+    featuresTitle: 'What the product does',
+    features: ['Interview questions from a PD', 'Cover letters from CV + PD', 'Candidate reports', 'Position proposals', 'Long-list candidate ranking', 'Outputs saved to SharePoint']
+  },
+  {
+    title: 'Houdini',
+    company: 'XAM', period: '2024',
+    tags: ['AI', 'websitebuilder', 'marketing'],
+    blurb: "XAM's own product, billed as the world's first website creation platform built from the ground up for AI.",
+    detail: [
+      'Managed the project alongside the Product Owner (CEO of XAM) to define what the product should be and achieve.',
+      'Worked with the software team on AI best practices: co-pilot methodology and AI-first UX / UI.',
+      'Documented requirements on the internal PM system and ran delivery out of DevOps using Scrum.',
+      'Supported a successful public launch in 2024.'
+    ]
+  },
+  {
+    title: 'Think Clear',
+    company: 'XAM', period: 'Short contract',
+    tags: ['philanthropy'],
+    blurb: 'A short engagement to build out a charity\u2019s project ways of working and hand them a clean delivery setup.',
+    detail: [
+      'Set up Jira and translated an already-designed product and its business rules into user stories with acceptance criteria and designs.',
+      'Created handover documentation including process maps, requirements matrices and API docs in Confluence.',
+      'Ran workshops teaching Scrum ways of working and facilitated ceremonies during the engagement.',
+      'Ensured a smooth transition, handing over cleanly to the Director.'
+    ]
+  },
+  {
+    title: 'G\u2019day Parks Mobile App',
+    company: 'G\u2019DAY GROUP × XAM', period: 'Co-delivery',
+    tags: ['retail', 'hospitality', 'travel'],
+    blurb: 'Senior BA &amp; Scrum Master on a co-delivery team rebuilding the G\u2019day Parks mobile app into Flutter.',
+    detail: [
+      'Hosted discovery workshops with stakeholder focus groups across a 4-week discovery, 12-week build and 2\u20133 week handover.',
+      'Prepped, planned and facilitated all scrum ceremonies.',
+      'Built traceability matrices and reusable templates; kept user stories transparent and re-usable.',
+      'Created project plans with delivery dashboards, burn-down / up and Gantt charts.',
+      'Handled APIs and ensured thorough testing through Stoplight → Swagger → app.'
+    ]
+  },
+  {
+    title: 'Anca AutoMarkX',
+    company: 'Anca × XAM', period: 'Senior BA',
+    tags: ['manufacturing'],
+    blurb: 'Guided a dev team delivering AMX, a WPF application driving Anca\u2019s laser tool-marking machine.',
+    detail: [
+      'Gathered requirements for how the robot and laser machine should coordinate with other products.',
+      'Supported alignment between hardware and software so tools can be marked from all angles.',
+      'Acted as Scrum Master, providing facilitation and guidance to the team.',
+      'Upgraded the application\u2019s UI / UX, kept consistent with existing Anca products, and assisted with QA.'
+    ]
+  },
+  {
+    title: 'DoctorChat',
+    company: 'XAM', period: 'BA / SM / PM',
+    tags: ['healthcare'],
+    blurb: 'A HIPAA-compliant communication platform for dental offices: WPF desktop, iOS, Android and a web admin portal.',
+    detail: [
+      'Gathered and unpacked requirements from the PO and customers; wrote small, sized user stories with AC, business rules and error handling.',
+      'Facilitated prioritisation, grooming, stand-ups, reviews and retros; managed DevOps and documented in Confluence.',
+      'Agreed Definition of Ready / Done with the PO and signed off tickets alongside QA.',
+      'Ran UAT training and released to production, onboarding over 80 dental offices across the US.'
+    ],
+    featuresTitle: 'Features I worked on',
+    features: ['Office &amp; patient chat', 'Secure email inbox', 'COVID-19 check-in', 'Gamification / loyalty', 'Team management console', 'Secure patient SMS', 'In-app e-fax', 'Stripe payments', 'Twilio SMS']
+  },
+  {
+    title: 'Opteon',
+    company: 'Opteon × XAM', period: 'Co-delivery',
+    tags: ['realestate'],
+    blurb: 'Scoped and built a white-label iOS app for an international valuation &amp; property services provider.',
+    detail: [
+      'Worked with the designer on an information-architecture diagram and with developers on a high-level solution architecture.',
+      'Defined DoD / DoR with the team and ran all sprint ceremonies as Scrum Master.',
+      'Built epics, user stories and acceptance criteria from a concept map; documented as-is and to-be processes.',
+      'Stepped into PM and QA roles as needed; held weekly governance meetings and reported status.',
+      'Released on time to the Apple App Store.'
+    ]
+  },
+  {
+    title: "O'Brien",
+    company: 'XAM', period: 'Hybrid BA / PM',
+    tags: ['manufacturing', 'automotive'],
+    blurb: "Rebuilt the mobile app (Windows → Android) for a vehicle-glass company serving 360,000+ drivers a year.",
+    detail: [
+      'Created the backlog with epics, features and stories (including acceptance criteria).',
+      'Led sprint planning and review; ran backlog grooming and daily stand-ups.',
+      'Conducted design review meetings with both XAM and O\u2019Brien teams and tested each sprint\u2019s build.',
+      'Created and showcased weekly progress reports and app builds.'
+    ],
+    featuresTitle: 'Job workflow built',
+    features: ['Job lists &amp; details', 'Travel to site', 'Site &amp; vehicle check', 'Price check', 'Pre-job inspection', 'Fitting &amp; warranty', 'Post-job inspection', 'Payment (Square)', 'Invoicing &amp; close']
+  },
+  {
+    title: '60 Seconds',
+    company: 'XAM', period: 'Scrum Master',
+    tags: ['marketing', 'sales'],
+    blurb: 'A mobile app delivering tailored coaching to drive measurable improvement in sales, marketing and communication.',
+    detail: [
+      'Established a common Ways of Working and planned, organised and coordinated the work.',
+      'Facilitated estimation across sprint and backlog planning.',
+      'Ensured scrum ceremonies reached their desired output.',
+      'Surfaced and documented risks; reported via sprint reviews, story points and burn-down.'
+    ],
+    featuresTitle: 'Features I worked on',
+    features: ['Scenario / task creation', 'Coaching feedback platform', 'Rehearse &amp; delivery video suite', 'Quant &amp; qual web reporting']
+  },
+  {
+    title: 'AIMS &amp; Sewer Viewer',
+    company: 'CALM Group Ltd', period: '2012 – 2018',
+    tags: ['utilities'],
+    blurb: 'Products to manage, track and report on the UK waste-water network, with integrated vehicle tracking and office stats boards.',
+    detail: [
+      'Worked across CALM\u2019s two main products, AIMS and Sewer Viewer, and integrated the Masternaut vehicle tracking &amp; scheduling system.',
+      'Drove digital notice boards displaying daily team and vehicle statistics in the office.',
+      'As a start-up, led implementation of process-management systems across the business:',
+      'ISO 9001 Quality · OHSAS 18001 Health &amp; Safety · ISO 14001 Environmental · ISO 27001 Information Security.'
+    ]
+  }
+];

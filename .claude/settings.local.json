@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node \"C:\\\\Users\\\\laura\\\\.claude\\\\skills\\\\impeccable\\\\scripts\\\\context.mjs\")",
+      "Skill(impeccable)",
+      "Skill(impeccable:*)",
+      "Bash(git fetch *)"
+    ]
+  }
+}

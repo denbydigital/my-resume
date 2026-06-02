@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin:0; padding:26px 32px; background:var(--bg); }
+  .name { font-family:var(--font-mono); font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--fg-2); margin-bottom:16px; }
+  .card { background:#fff; border:1px solid var(--stone-200); border-radius:16px; box-shadow:0 1px 2px rgba(33,30,24,.05),0 2px 6px rgba(33,30,24,.05); padding:24px; max-width:340px; }
+  .ic { width:42px; height:42px; border-radius:11px; background:var(--pine-50); display:flex; align-items:center; justify-content:center; margin-bottom:16px; }
+  .ic svg { width:21px; height:21px; color:var(--pine-600); }
+  .eyebrow { margin-bottom:10px; }
+  h4 { margin:0 0 8px; }
+  p { margin:0; font-size:14px; }
+  .lk { display:inline-flex; align-items:center; gap:6px; margin-top:16px; font-family:var(--font-sans); font-weight:600; font-size:14px; color:var(--pine-700); }
+  .lk svg { width:15px; height:15px; }
+</style>
+</head>
+<body>
+  <div class="name">Service card — resting state</div>
+  <div class="card">
+    <div class="ic"><i data-lucide="compass"></i></div>
+    <div class="eyebrow">What I do</div>
+    <h4>Architecture reviews</h4>
+    <p>A clear-eyed read on what's holding your system back, and a sequenced plan to fix it without stopping the line.</p>
+    <span class="lk">Learn more <i data-lucide="arrow-right"></i></span>
+  </div>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Experience · Laura Denby</title>
+<link rel="stylesheet" href="styles/tokens.css">
+<link rel="stylesheet" href="styles/site.css">
+<style>
+  .tl { display: flex; flex-direction: column; gap: 22px; }
+  .tl-item { display: grid; grid-template-columns: 184px 1fr; gap: 28px; align-items: start; }
+  .tl-meta { position: sticky; top: 92px; padding-top: 4px; }
+  .tl-period { font-family: var(--font-mono); font-size: 12.5px; letter-spacing: 0.04em; color: var(--clay-600); font-weight: 500; }
+  .tl-dur { font-size: 13px; color: var(--fg-3); margin-top: 6px; }
+  .role h3 { font-family: var(--font-serif); font-weight: 500; font-size: 24px; letter-spacing: -0.01em; margin: 0; }
+  .role .co { font-size: 14.5px; color: var(--pine-700); font-weight: 600; margin-top: 4px; }
+  .role .ctx { font-size: 15px; line-height: 1.6; color: var(--fg-2); margin: 14px 0 0; }
+  .role .ticks { margin-top: 18px; }
+  .role .ticks li { font-size: 14.5px; }
+  .projects { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0 2px; }
+  .proj { background: var(--pine-50); border-radius: var(--r-md); padding: 13px 15px; }
+  .proj b { display: block; font-size: 13.5px; color: var(--pine-800); font-weight: 600; }
+  .proj span { display: block; font-size: 12.5px; color: var(--pine-700); margin-top: 3px; line-height: 1.45; }
+  @media (max-width: 820px) {
+    .tl-item { grid-template-columns: 1fr; gap: 12px; }
+    .tl-meta { position: static; }
+    .projects { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body data-page="experience">
+  <header id="site-header"></header>
+
+  <main class="page">
+    <section class="page-hero">
+      <div class="wrap">
+        <div class="eyebrow">Experience</div>
+        <h1>Twelve years of delivery, three companies, one craft.</h1>
+        <p class="lede measure">From a start-up's first BA to a consultant trusted with government and enterprise integrations. Here's where I've done the work.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="tl">
+
+          <article class="tl-item">
+            <div class="tl-meta">
+              <div class="tl-period">2024–Present</div>
+              <div class="tl-dur">Current role</div>
+            </div>
+            <div class="card role">
+              <h3>IT Business Analyst</h3>
+              <div class="co">Olympic33</div>
+              <p class="ctx">Working across two concurrent implementation &amp; consulting engagements, collaborating with engineers, functional consultants and client stakeholders across the full delivery lifecycle.</p>
+              <div class="projects">
+                <div class="proj"><b>FashionBiz B2B Portal</b><span>Ecommerce ↔ Microsoft Business Central integration via BizCoLab / BCIP</span></div>
+                <div class="proj"><b>Queensland Law Society</b><span>New CPD module on a Power Platform portal backed by Dynamics 365 CE</span></div>
+              </div>
+              <ul class="ticks">
+                <li><i class="ic" data-lucide="check"></i>Defined, documented and refined requirements &amp; user stories with Dynamics consultants and developers</li>
+                <li><i class="ic" data-lucide="check"></i>Facilitated discovery workshops and stakeholder interviews across business units</li>
+                <li><i class="ic" data-lucide="check"></i>Mapped current- and future-state processes, identifying automation &amp; transformation opportunities</li>
+                <li><i class="ic" data-lucide="check"></i>Coordinated UAT planning &amp; execution: test cases, defect triage and user training</li>
+                <li><i class="ic" data-lucide="check"></i>Produced BRDs, FSDs and stakeholder training: manuals, videos and FAQ sheets</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="tl-item">
+            <div class="tl-meta">
+              <div class="tl-period">2019–2024</div>
+              <div class="tl-dur">~5 years</div>
+            </div>
+            <div class="card role">
+              <h3>IT Business Analyst</h3>
+              <div class="co">XAM Consulting Pty Ltd</div>
+              <p class="ctx">Collaborated on 20+ SDLC projects spanning finance, hospitality, insurance, healthcare and residential sectors, often as BA, Scrum Master and acting PM at once.</p>
+              <ul class="ticks">
+                <li><i class="ic" data-lucide="check"></i>Led and facilitated Agile ceremonies, aligning multiple teams to goals and timelines</li>
+                <li><i class="ic" data-lucide="check"></i>Planned and coordinated activities and resources to budget and timeframe</li>
+                <li><i class="ic" data-lucide="check"></i>Designed and implemented UX solutions across web, mobile and desktop products</li>
+                <li><i class="ic" data-lucide="check"></i>Built Program Increment plans to establish a shared vision across Agile teams</li>
+                <li><i class="ic" data-lucide="check"></i>Produced BRDs, FSDs, user stories, process maps and UAT documentation across all projects</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="tl-item">
+            <div class="tl-meta">
+              <div class="tl-period">2012–2018</div>
+              <div class="tl-dur">Junior → IT BA</div>
+            </div>
+            <div class="card role">
+              <h3>IT Business Analyst &amp; Junior BA</h3>
+              <div class="co">Ipsum (formerly CALM Solutions Ltd)</div>
+              <p class="ctx">Joined as a start-up and rose through the ranks as the company grew. Spearheaded CALM's internal B2C/B2B products, <em>AIMS</em> and <em>Sewer Viewer</em>.</p>
+              <ul class="ticks">
+                <li><i class="ic" data-lucide="check"></i>Conducted stakeholder analysis and planned engagement from a product / requirement perspective</li>
+                <li><i class="ic" data-lucide="check"></i>Planned and led requirements workshops; gathered and analysed documentation sources</li>
+                <li><i class="ic" data-lucide="check"></i>Collaborated with designers on user research, documenting findings</li>
+                <li><i class="ic" data-lucide="check"></i>Facilitated Product Backlog Refinement to an agreed Definition of Ready</li>
+                <li><i class="ic" data-lucide="check"></i>Reviewed work against Definition of Done, and represented the Product Owner when needed</li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="site.js"></script>
+</body>
+</html>

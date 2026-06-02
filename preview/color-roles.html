@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin:0; padding:24px 28px; background:var(--bg); }
+  .name { font-family:var(--font-mono); font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--fg-2); margin-bottom:16px; }
+  .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px 14px; }
+  .item { display:flex; align-items:center; gap:10px; }
+  .chip { width:34px; height:34px; border-radius:8px; border:1px solid rgba(33,30,24,.08); flex:none; }
+  .meta b { font-family:var(--font-sans); font-size:12.5px; color:var(--fg-1); }
+  .meta span { font-family:var(--font-mono); font-size:10px; color:var(--fg-3); display:block; margin-top:1px; }
+</style>
+</head>
+<body>
+  <div class="name">Semantic roles — light theme</div>
+  <div class="grid">
+    <div class="item"><div class="chip" style="background:#FBF9F5"></div><div class="meta"><b>--bg</b><span>page</span></div></div>
+    <div class="item"><div class="chip" style="background:#FFFFFF"></div><div class="meta"><b>--surface</b><span>cards</span></div></div>
+    <div class="item"><div class="chip" style="background:#F4EFE7"></div><div class="meta"><b>--bg-sunk</b><span>recessed</span></div></div>
+    <div class="item"><div class="chip" style="background:#211E18"></div><div class="meta"><b>--fg-1</b><span>text</span></div></div>
+    <div class="item"><div class="chip" style="background:#6E6657"></div><div class="meta"><b>--fg-2</b><span>secondary</span></div></div>
+    <div class="item"><div class="chip" style="background:#948A78"></div><div class="meta"><b>--fg-3</b><span>muted</span></div></div>
+    <div class="item"><div class="chip" style="background:#E9E1D5"></div><div class="meta"><b>--border</b><span>hairline</span></div></div>
+    <div class="item"><div class="chip" style="background:#185849"></div><div class="meta"><b>--primary</b><span>pine-600</span></div></div>
+    <div class="item"><div class="chip" style="background:#BD5B3D"></div><div class="meta"><b>--accent</b><span>clay-500</span></div></div>
+  </div>
+</body>
+</html>

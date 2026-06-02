@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin:0; padding:0; background:var(--bg); }
+  .bar { display:flex; align-items:center; justify-content:space-between; padding:18px 28px; background:rgba(251,249,245,.85); backdrop-filter:blur(10px); border-bottom:1px solid var(--stone-200); }
+  .logo { display:flex; align-items:center; gap:11px; }
+  .logo img { width:30px; height:30px; }
+  .logo b { font-family:var(--font-serif); font-weight:600; font-size:19px; color:var(--fg-1); letter-spacing:-.01em; }
+  nav { display:flex; align-items:center; gap:26px; }
+  nav a { font-family:var(--font-sans); font-size:14.5px; font-weight:500; color:var(--fg-2); text-decoration:none; }
+  nav a.active { color:var(--fg-1); }
+  .cta { font-family:var(--font-sans); font-weight:600; font-size:14px; padding:9px 17px; border-radius:8px; background:var(--pine-600); color:#fff; }
+  .pad { padding:28px; font-family:var(--font-mono); font-size:11px; color:var(--fg-3); }
+</style>
+</head>
+<body>
+  <div class="bar">
+    <div class="logo"><img src="../assets/mark.svg" alt=""><b>Avery Sloane</b></div>
+    <nav>
+      <a class="active">Work</a>
+      <a>Services</a>
+      <a>About</a>
+      <a class="cta">Book a call</a>
+    </nav>
+  </div>
+  <div class="pad">Sticky header — translucent paper + blur, hairline divider</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin:0; padding:24px 32px; background:var(--bg); }
+  .grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:24px; }
+  .fam .big { line-height:1; color:var(--fg-1); margin-bottom:10px; }
+  .name { font-family:var(--font-mono); font-size:11.5px; color:var(--accent); letter-spacing:.08em; text-transform:uppercase; }
+  .use { font-family:var(--font-sans); font-size:13px; color:var(--fg-2); margin-top:3px; line-height:1.45; }
+</style>
+</head>
+<body>
+  <div class="grid">
+    <div class="fam">
+      <div class="big" style="font-family:var(--font-serif);font-weight:500;font-size:46px">Aa</div>
+      <div class="name">Newsreader</div>
+      <div class="use">Serif display & headlines. Warm, editorial, credible.</div>
+    </div>
+    <div class="fam">
+      <div class="big" style="font-family:var(--font-sans);font-weight:600;font-size:46px">Aa</div>
+      <div class="name">Hanken Grotesk</div>
+      <div class="use">Humanist sans for body & UI. Friendly, legible.</div>
+    </div>
+    <div class="fam">
+      <div class="big" style="font-family:var(--font-mono);font-weight:500;font-size:42px">Aa</div>
+      <div class="name">IBM Plex Mono</div>
+      <div class="use">Eyebrows, labels & code. The technical signal.</div>
+    </div>
+  </div>
+</body>
+</html>

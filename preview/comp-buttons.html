@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin:0; padding:28px 32px; background:var(--bg); }
+  .name { font-family:var(--font-mono); font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--fg-2); margin-bottom:18px; }
+  .row { display:flex; gap:14px; align-items:center; flex-wrap:wrap; }
+  .btn { display:inline-flex; align-items:center; gap:8px; font-family:var(--font-sans); font-weight:600; font-size:15px; padding:11px 20px; border-radius:8px; border:1px solid transparent; cursor:pointer; transition:all var(--dur) var(--ease-out); }
+  .btn svg { width:17px; height:17px; }
+  .primary { background:var(--pine-600); color:#fff; }
+  .primary:hover { background:var(--pine-700); }
+  .secondary { background:#fff; color:var(--pine-700); border-color:var(--stone-300); }
+  .secondary:hover { border-color:var(--pine-600); }
+  .accent { background:var(--clay-500); color:#fff; }
+  .accent:hover { background:var(--clay-600); }
+  .ghost { background:transparent; color:var(--pine-700); }
+  .ghost:hover { background:var(--pine-50); }
+</style>
+</head>
+<body>
+  <div class="name">Buttons — variants</div>
+  <div class="row">
+    <button class="btn primary">Book an intro call <i data-lucide="arrow-right"></i></button>
+    <button class="btn secondary">See how I work</button>
+    <button class="btn accent">Start a project</button>
+    <button class="btn ghost"><i data-lucide="play"></i> Watch overview</button>
+  </div>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

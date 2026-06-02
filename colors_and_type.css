@@ -1,0 +1,278 @@
+/* ============================================================================
+   AVERY SLOANE — BRAND SYSTEM
+   colors_and_type.css — foundational + semantic tokens
+   ----------------------------------------------------------------------------
+   Fonts are loaded from Google Fonts (see @import below). If you need an
+   offline / self-hosted build, drop the .woff2 files into ./fonts and swap the
+   @import for @font-face rules. Families:
+     - Newsreader      → warm humanist serif, for display & editorial headlines
+     - Hanken Grotesk  → humanist sans, for UI + body
+     - IBM Plex Mono   → technical mono, for eyebrows/kickers, labels, code
+   ============================================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* ---------------------------------------------------------------------- */
+  /* FONT FAMILIES                                                          */
+  /* ---------------------------------------------------------------------- */
+  --font-serif: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --font-sans:  'Hanken Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono:  'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* ---------------------------------------------------------------------- */
+  /* CORE PALETTE — raw scales                                              */
+  /* ---------------------------------------------------------------------- */
+
+  /* Stone — warm neutral (the backbone of the system) */
+  --stone-50:  #FBF9F5;
+  --stone-100: #F4EFE7;
+  --stone-200: #E9E1D5;
+  --stone-300: #D8CDBC;
+  --stone-400: #B9AD99;
+  --stone-500: #948A78;
+  --stone-600: #6E6657;
+  --stone-700: #514B40;
+  --stone-800: #353129;
+  --stone-900: #211E18;  /* warm near-black ink */
+
+  /* Pine — primary (deep evergreen: calm, established, trusted) */
+  --pine-50:  #EAF3EF;
+  --pine-100: #CFE5DD;
+  --pine-200: #A3CDC0;
+  --pine-300: #6FAE9C;
+  --pine-400: #418D78;
+  --pine-500: #1F6E5C;   /* base */
+  --pine-600: #185849;
+  --pine-700: #134338;
+  --pine-800: #0E322A;
+  --pine-900: #0A221D;
+
+  /* Clay — accent (warm terracotta: friendly, human, playful) */
+  --clay-50:  #FBEFE9;
+  --clay-100: #F6D8C9;
+  --clay-200: #EDB69E;
+  --clay-300: #E0906E;
+  --clay-400: #D0714B;
+  --clay-500: #BD5B3D;   /* base */
+  --clay-600: #A24A30;
+  --clay-700: #823A26;
+  --clay-800: #5F2B1D;
+  --clay-900: #3F1D14;
+
+  /* Semantic hues (warm-tuned to live beside Pine + Clay) */
+  --success: #2F7D5B;
+  --success-bg: #E6F1EA;
+  --warning: #C98A2B;
+  --warning-bg: #F7ECD6;
+  --error:   #B4472F;
+  --error-bg: #F7E2DB;
+  --info:    #2E6F8E;
+  --info-bg: #E0EDF2;
+
+  /* ---------------------------------------------------------------------- */
+  /* SEMANTIC ROLES (light theme)                                           */
+  /* ---------------------------------------------------------------------- */
+  --bg:          var(--stone-50);     /* page background */
+  --bg-sunk:     var(--stone-100);    /* recessed sections */
+  --surface:     #FFFFFF;             /* cards, raised surfaces */
+  --surface-2:   var(--stone-50);     /* nested/alt surfaces */
+  --ink:         var(--stone-900);    /* dark sections / inverse bg */
+
+  --fg-1:        var(--stone-900);    /* primary text */
+  --fg-2:        var(--stone-600);    /* secondary text */
+  --fg-3:        var(--stone-500);    /* muted / captions */
+  --fg-on-dark:  var(--stone-50);     /* text on ink/pine surfaces */
+  --fg-on-dark-2:#C9C2B4;             /* secondary text on dark */
+
+  --border:      var(--stone-200);    /* default hairline */
+  --border-strong: var(--stone-300);  /* emphasized divider */
+  --border-on-dark: rgba(251,249,245,0.14);
+
+  --primary:        var(--pine-600);  /* primary actions, links */
+  --primary-hover:  var(--pine-700);
+  --primary-press:  var(--pine-800);
+  --primary-soft:   var(--pine-50);   /* tinted fills */
+  --on-primary:     #FFFFFF;
+
+  --accent:         var(--clay-500);  /* highlights, secondary CTAs */
+  --accent-hover:   var(--clay-600);
+  --accent-soft:    var(--clay-50);
+  --on-accent:      #FFFFFF;
+
+  --focus-ring:  rgba(31,110,92,0.32);
+
+  /* ---------------------------------------------------------------------- */
+  /* RADII                                                                  */
+  /* ---------------------------------------------------------------------- */
+  --r-xs: 6px;
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-xl: 22px;
+  --r-pill: 999px;
+
+  /* ---------------------------------------------------------------------- */
+  /* SPACING (4px base)                                                     */
+  /* ---------------------------------------------------------------------- */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 48px;
+  --sp-8: 64px;
+  --sp-9: 96px;
+  --sp-10: 128px;
+
+  /* ---------------------------------------------------------------------- */
+  /* SHADOWS — soft, warm, low (calm elevation)                            */
+  /* Tinted with warm ink rather than pure black.                          */
+  /* ---------------------------------------------------------------------- */
+  --shadow-xs: 0 1px 2px rgba(33,30,24,0.06);
+  --shadow-sm: 0 1px 2px rgba(33,30,24,0.05), 0 2px 6px rgba(33,30,24,0.05);
+  --shadow-md: 0 2px 4px rgba(33,30,24,0.05), 0 8px 20px rgba(33,30,24,0.07);
+  --shadow-lg: 0 4px 8px rgba(33,30,24,0.05), 0 18px 40px rgba(33,30,24,0.10);
+  --shadow-focus: 0 0 0 3px var(--focus-ring);
+
+  /* ---------------------------------------------------------------------- */
+  /* MOTION                                                                 */
+  /* ---------------------------------------------------------------------- */
+  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0.05, 0.36, 1);
+  --dur-fast: 120ms;
+  --dur: 200ms;
+  --dur-slow: 360ms;
+
+  /* ---------------------------------------------------------------------- */
+  /* TYPE TOKENS                                                            */
+  /* ---------------------------------------------------------------------- */
+  --fs-display: 64px;
+  --fs-h1: 44px;
+  --fs-h2: 32px;
+  --fs-h3: 24px;
+  --fs-h4: 19px;
+  --fs-body-lg: 19px;
+  --fs-body: 16px;
+  --fs-small: 14px;
+  --fs-caption: 13px;
+  --fs-eyebrow: 12.5px;
+
+  --lh-tight: 1.08;
+  --lh-snug: 1.25;
+  --lh-normal: 1.5;
+  --lh-relaxed: 1.65;
+
+  --tracking-eyebrow: 0.14em;
+  --tracking-tight: -0.02em;
+}
+
+/* ============================================================================
+   SEMANTIC TYPE CLASSES
+   Use these directly, or copy the rules into your own selectors.
+   ============================================================================ */
+
+.display {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: var(--fs-display);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--fg-1);
+}
+
+h1, .h1 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: var(--fs-h1);
+  line-height: 1.1;
+  letter-spacing: var(--tracking-tight);
+  color: var(--fg-1);
+}
+
+h2, .h2 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: var(--fs-h2);
+  line-height: var(--lh-snug);
+  letter-spacing: -0.01em;
+  color: var(--fg-1);
+}
+
+h3, .h3 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: var(--fs-h3);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--fg-1);
+}
+
+h4, .h4 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: var(--fs-h4);
+  line-height: 1.4;
+  color: var(--fg-1);
+}
+
+.body-lg {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: var(--fs-body-lg);
+  line-height: var(--lh-relaxed);
+  color: var(--fg-2);
+}
+
+p, .body {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: var(--fs-body);
+  line-height: var(--lh-relaxed);
+  color: var(--fg-2);
+}
+
+.small {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: var(--fs-small);
+  line-height: var(--lh-normal);
+  color: var(--fg-2);
+}
+
+.caption {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: var(--fs-caption);
+  line-height: var(--lh-normal);
+  color: var(--fg-3);
+}
+
+/* Eyebrow / kicker — the signature label style of the brand */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: var(--fs-eyebrow);
+  line-height: 1;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+code, .code {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 0.9em;
+  color: var(--pine-700);
+  background: var(--pine-50);
+  padding: 0.1em 0.4em;
+  border-radius: var(--r-xs);
+}
+
+/* Editorial serif italic — a warm, slightly playful accent */
+.serif-italic {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+}
