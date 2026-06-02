@@ -21,86 +21,86 @@
   --font-mono:  'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
 
   /* ---------------------------------------------------------------------- */
-  /* CORE PALETTE — raw scales                                              */
+  /* CORE PALETTE — Petal & Butter                                         */
   /* ---------------------------------------------------------------------- */
 
-  /* Stone — warm neutral (the backbone of the system) */
-  --stone-50:  #FBF9F5;
-  --stone-100: #F4EFE7;
-  --stone-200: #E9E1D5;
-  --stone-300: #D8CDBC;
-  --stone-400: #B9AD99;
-  --stone-500: #948A78;
-  --stone-600: #6E6657;
-  --stone-700: #514B40;
-  --stone-800: #353129;
-  --stone-900: #211E18;  /* warm near-black ink */
+  /* Stone — blush-tinted neutrals (borders, text, structure) */
+  --stone-50:  #FDF7F9;   /* blush white — page background */
+  --stone-100: #F7EDF2;
+  --stone-200: #EEDDE6;   /* borders */
+  --stone-300: #DEC0CC;
+  --stone-400: #C99EB0;
+  --stone-500: #A87C8F;   /* muted captions */
+  --stone-600: #85566A;   /* secondary text — 5.6:1 on bg ✓ */
+  --stone-700: #60394C;
+  --stone-800: #3D2232;
+  --stone-900: #2A1420;   /* warm near-black ink */
 
-  /* Primary — soft dusty blue (calm, neutral, professional) */
-  --pine-50:  #EFF2F8;
-  --pine-100: #DEE4F1;
-  --pine-200: #C6D0E7;
-  --pine-300: #A6B5D9;
-  --pine-400: #8598C6;
-  --pine-500: #6A7EB2;
-  --pine-600: #56699D;   /* base — buttons / links */
-  --pine-700: #45547E;
-  --pine-800: #364162;
-  --pine-900: #29314A;
+  /* Primary — deep rose (buttons, links, headings, stats) */
+  --pine-50:  #FEF0F6;
+  --pine-100: #FCD9EA;   /* footer background */
+  --pine-200: #F9B0D1;
+  --pine-300: #F380B4;
+  --pine-400: #E85498;
+  --pine-500: #D33080;
+  --pine-600: #B82269;   /* base — 6:1 with white ✓ */
+  --pine-700: #971A55;
+  --pine-800: #741342;
+  --pine-900: #500D2D;
 
-  /* Accent — soft muted blush rose (warm, gentle, human) */
-  --clay-50:  #FAEFF0;
-  --clay-100: #F3DADD;
-  --clay-200: #E8BDC3;
-  --clay-300: #D99AA3;
-  --clay-400: #CC8089;
-  --clay-500: #BE6B75;   /* base */
-  --clay-600: #A4555F;
-  --clay-700: #82424B;
-  --clay-800: #5D2F35;
-  --clay-900: #3F1F23;
+  /* Accent — butter yellow (eyebrows, highlights, fills) */
+  --clay-50:  #FFFBEB;   /* very pale yellow fill */
+  --clay-100: #FFF3C2;
+  --clay-200: #FFE480;
+  --clay-300: #FFD040;
+  --clay-400: #F5B800;
+  --clay-500: #D99A00;
+  --clay-600: #8C6400;   /* text use — 4.8:1 on bg ✓ */
+  --clay-700: #6B4C00;
+  --clay-800: #4A3400;
+  --clay-900: #2E2000;
 
-  /* Semantic hues (warm-tuned to live beside Pine + Clay) */
-  --success: #2F7D5B;
-  --success-bg: #E6F1EA;
-  --warning: #C98A2B;
-  --warning-bg: #F7ECD6;
-  --error:   #B4472F;
-  --error-bg: #F7E2DB;
-  --info:    #2E6F8E;
-  --info-bg: #E0EDF2;
+  /* Semantic states */
+  --success: #2E7D52;
+  --success-bg: #E8F4EE;
+  --warning: #B86C00;
+  --warning-bg: #FFF3DC;
+  --error:   #C0303A;
+  --error-bg: #FDEAEB;
+  --info:    #1F6FA8;
+  --info-bg: #E0EFF8;
 
   /* ---------------------------------------------------------------------- */
   /* SEMANTIC ROLES (light theme)                                           */
   /* ---------------------------------------------------------------------- */
-  --bg:          var(--stone-50);     /* page background */
-  --bg-sunk:     var(--pine-50);       /* recessed sections — soft sage tint */
+  --bg:          var(--stone-50);     /* blush white page background */
+  --bg-sunk:     #FFF9E6;             /* pale butter yellow — recessed sections */
   --surface:     #FFFFFF;             /* cards, raised surfaces */
   --surface-2:   var(--stone-50);     /* nested/alt surfaces */
-  --ink:         var(--stone-900);    /* dark sections / inverse bg */
+  --ink:         var(--pine-900);     /* dark sections / inverse bg */
 
   --fg-1:        var(--stone-900);    /* primary text */
   --fg-2:        var(--stone-600);    /* secondary text */
   --fg-3:        var(--stone-500);    /* muted / captions */
-  --fg-on-dark:  var(--stone-50);     /* text on ink/pine surfaces */
-  --fg-on-dark-2:#C9C2B4;             /* secondary text on dark */
+  --fg-on-dark:  var(--stone-50);     /* text on dark surfaces */
+  --fg-on-dark-2:#F2C8D8;             /* secondary text on dark */
 
-  --border:      var(--stone-200);    /* default hairline */
+  --border:        var(--stone-200);  /* default hairline */
   --border-strong: var(--stone-300);  /* emphasized divider */
-  --border-on-dark: rgba(251,249,245,0.14);
+  --border-on-dark: rgba(253,247,249,0.16);
 
   --primary:        var(--pine-600);  /* primary actions, links */
   --primary-hover:  var(--pine-700);
   --primary-press:  var(--pine-800);
-  --primary-soft:   var(--pine-50);   /* tinted fills */
+  --primary-soft:   var(--pine-50);
   --on-primary:     #FFFFFF;
 
-  --accent:         var(--clay-600);  /* highlights, eyebrows (readable) */
+  --accent:         var(--clay-600);  /* eyebrows, highlights — dark gold */
   --accent-hover:   var(--clay-700);
   --accent-soft:    var(--clay-50);
   --on-accent:      #FFFFFF;
 
-  --focus-ring:  rgba(86,105,157,0.34);
+  --focus-ring:  rgba(184,34,105,0.30);
 
   /* ---------------------------------------------------------------------- */
   /* RADII                                                                  */
@@ -130,10 +130,10 @@
   /* SHADOWS — soft, warm, low (calm elevation)                            */
   /* Tinted with warm ink rather than pure black.                          */
   /* ---------------------------------------------------------------------- */
-  --shadow-xs: 0 1px 2px rgba(33,30,24,0.06);
-  --shadow-sm: 0 1px 2px rgba(33,30,24,0.05), 0 2px 6px rgba(33,30,24,0.05);
-  --shadow-md: 0 2px 4px rgba(33,30,24,0.05), 0 8px 20px rgba(33,30,24,0.07);
-  --shadow-lg: 0 4px 8px rgba(33,30,24,0.05), 0 18px 40px rgba(33,30,24,0.10);
+  --shadow-xs: 0 1px 2px rgba(42,20,32,0.06);
+  --shadow-sm: 0 1px 2px rgba(42,20,32,0.05), 0 2px 6px rgba(42,20,32,0.05);
+  --shadow-md: 0 2px 4px rgba(42,20,32,0.05), 0 8px 20px rgba(42,20,32,0.07);
+  --shadow-lg: 0 4px 8px rgba(42,20,32,0.05), 0 18px 40px rgba(42,20,32,0.10);
   --shadow-focus: 0 0 0 3px var(--focus-ring);
 
   /* ---------------------------------------------------------------------- */

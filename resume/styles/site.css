@@ -23,7 +23,7 @@ img { display: block; max-width: 100%; }
 /* ------------------------------------------------------------------ HEADER */
 .site-header {
   position: sticky; top: 0; z-index: 50;
-  background: rgba(251,249,245,0.82);
+  background: rgba(253,247,249,0.88);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid transparent;
@@ -148,7 +148,7 @@ img { display: block; max-width: 100%; }
 /* ------------------------------------------------------------------ FOOTER */
 .site-footer { background: var(--pine-100); color: var(--fg-1); margin-top: 8px; border-top: 1px solid var(--pine-200); }
 .site-footer .wrap { padding-top: 56px; padding-bottom: 40px; }
-.foot-cta { display: flex; align-items: flex-end; justify-content: space-between; gap: 28px; flex-wrap: wrap; padding-bottom: 40px; border-bottom: 1px solid rgba(45,59,51,0.14); }
+.foot-cta { display: flex; align-items: flex-end; justify-content: space-between; gap: 28px; flex-wrap: wrap; padding-bottom: 40px; border-bottom: 1px solid rgba(80,13,45,0.16); }
 .foot-cta h2 { font-family: var(--font-serif); font-weight: 500; font-size: 30px; margin: 12px 0 8px; color: var(--pine-900); max-width: 18ch; line-height: 1.12; }
 .foot-cta p { margin: 0; color: var(--fg-2); }
 .foot-base { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; padding-top: 28px; }
@@ -192,7 +192,7 @@ img { display: block; max-width: 100%; }
 .mobile-nav {
   position: fixed; inset: 0;
   z-index: 49;
-  background: rgba(251,249,245,0.97);
+  background: rgba(253,247,249,0.97);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   overflow-y: auto;
