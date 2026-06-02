@@ -47,10 +47,8 @@
     font-size: clamp(17px, 2.4vw, 21px); line-height: 1.55; color: var(--fg-2);
     max-width: 52ch; margin: 26px auto 0;
   }
-  .cover__buttons { display: flex; align-items: center; justify-content: center; gap: 14px; margin-top: 40px; flex-wrap: wrap; }
-  .cover__nope-space { width: 148px; height: 52px; } /* reserves space for the nope button */
   .cover__enter {
-    display: inline-flex; align-items: center; gap: 10px; cursor: pointer;
+    display: inline-flex; align-items: center; gap: 10px; margin-top: 40px; cursor: pointer;
     font-family: var(--font-sans); font-weight: 600; font-size: 16px;
     padding: 15px 30px; border-radius: var(--r-pill); border: none;
     background: var(--pine-600); color: #fff;
@@ -61,21 +59,6 @@
   .cover__enter:active { transform: scale(0.98); }
   .cover__enter .ic { width: 18px; height: 18px; transition: transform var(--dur) var(--ease-out); }
   .cover__enter:hover .ic { transform: translateX(3px); }
-
-  /* The impossible button — always fixed so cover overflow:hidden can't trap it */
-  .cover__nope {
-    position: fixed;
-    display: inline-flex; align-items: center; cursor: pointer;
-    font-family: var(--font-sans); font-weight: 500; font-size: 15px;
-    padding: 14px 24px; border-radius: var(--r-pill);
-    border: 1.5px solid var(--stone-500); background: transparent; color: var(--fg-2);
-    white-space: nowrap; z-index: 500;
-    transition: left 180ms cubic-bezier(0.22, 1, 0.36, 1),
-                top  180ms cubic-bezier(0.22, 1, 0.36, 1);
-    /* hidden until JS positions it */
-    opacity: 0;
-  }
-  .cover__nope.is-ready { opacity: 1; transition: left 180ms cubic-bezier(0.22, 1, 0.36, 1), top 180ms cubic-bezier(0.22, 1, 0.36, 1), opacity 300ms; }
 
   .cover__meta {
     position: absolute; bottom: 30px; left: 0; right: 0; z-index: 1;
@@ -97,21 +80,14 @@
         Thirteen years turning complex business needs into intuitive, impactful digital
         products, with AI built into every step of the practice.
       </p>
-      <div class="cover__buttons anim a5">
-        <button class="cover__enter" id="enter" aria-label="Enter portfolio">
-          Enter portfolio <i class="ic" data-lucide="arrow-right"></i>
-        </button>
-        <!-- spacer so layout doesn't collapse when nope button goes fixed -->
-        <div class="cover__nope-space" id="nope-space" aria-hidden="true"></div>
-      </div>
+      <button class="cover__enter anim a5" id="enter" aria-label="Enter portfolio">
+        Enter portfolio <i class="ic" data-lucide="arrow-right"></i>
+      </button>
     </div>
     <div class="cover__meta anim a5">
       <span>13 years</span><i></i><span>Agile · Scrum</span><i></i><span>AI-assisted delivery</span>
     </div>
   </main>
-
-  <!-- No thank you button lives on body so overflow:hidden on cover can't clip it -->
-  <button class="cover__nope" id="no-thanks" aria-label="No thank you">No thank you</button>
 
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
   <script src="sparkle.js"></script>
@@ -130,44 +106,6 @@
       if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); enter(); }
     });
 
-    // ---- The impossible "No thank you" button ----
-    var noBtn = document.getElementById('no-thanks');
-    var nopeMsgs = ['No thank you', 'Nope!', 'Nice try!', 'Still no!', 'Nuh-uh!', 'Not a chance!', 'Really?!', 'Give up! 😅', '😂'];
-    var msgIdx = 0;
-
-    // Position next to the enter button once animations settle
-    setTimeout(function () {
-      var enterRect = document.getElementById('enter').getBoundingClientRect();
-      noBtn.style.left = (enterRect.right + 14) + 'px';
-      noBtn.style.top  = enterRect.top + 'px';
-      noBtn.classList.add('is-ready');
-    }, 900);
-
-    function getFleePos(cx, cy) {
-      var w = noBtn.offsetWidth || 148, h = noBtn.offsetHeight || 52;
-      var pad = 60;
-      for (var i = 0; i < 15; i++) {
-        var x = pad + Math.random() * (window.innerWidth  - w - pad * 2);
-        var y = pad + Math.random() * (window.innerHeight - h - pad * 2);
-        if (Math.hypot(x + w / 2 - cx, y + h / 2 - cy) > 180) return { x: x, y: y };
-      }
-      return { x: cx < window.innerWidth / 2 ? window.innerWidth - w - pad : pad,
-               y: cy < window.innerHeight / 2 ? window.innerHeight - h - pad : pad };
-    }
-
-    function flee(cx, cy) {
-      msgIdx = (msgIdx + 1) % nopeMsgs.length;
-      noBtn.textContent = nopeMsgs[msgIdx];
-      var pos = getFleePos(cx, cy);
-      noBtn.style.left = pos.x + 'px';
-      noBtn.style.top  = pos.y + 'px';
-    }
-
-    noBtn.addEventListener('mouseenter', function (e) { flee(e.clientX, e.clientY); });
-    noBtn.addEventListener('touchstart', function (e) {
-      flee(e.touches[0].clientX, e.touches[0].clientY);
-      e.preventDefault();
-    }, { passive: false });
   </script>
 </body>
 </html>
