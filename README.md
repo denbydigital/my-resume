@@ -2,7 +2,7 @@
 
 This repository is a **design system**: the typography, color, spacing, voice,
 assets, and reusable UI components that let a design agent (or a human) produce
-on-brand work for Avery Sloane — websites, decks, one-pagers, social, email.
+on-brand work for Laura Denby — websites, decks, one-pagers, social, email.
 
 ---
 
