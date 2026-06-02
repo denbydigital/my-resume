@@ -1,10 +1,4 @@
-# Avery Sloane — Brand System
-
-> **A note on the name.** `Avery Sloane` is a **placeholder** for the brand owner's
-> real name. It stands in for an independent software-industry consultant with a
-> *corporate-but-friendly* personal brand. Swap the name, tagline, and the `AS`
-> monogram for the real identity — everything is centralized so this is a quick
-> find-and-replace. See **Caveats** at the bottom.
+# Laura Denby — Brand System
 
 This repository is a **design system**: the typography, color, spacing, voice,
 assets, and reusable UI components that let a design agent (or a human) produce
@@ -14,7 +8,7 @@ on-brand work for Avery Sloane — websites, decks, one-pagers, social, email.
 
 ## Who this brand is for
 
-Avery Sloane is an **independent software consultant** — strategy, architecture,
+Laura Denby is an **independent software consultant** — strategy, architecture,
 and delivery for growing engineering teams. The brand has to do two things at
 once, which is the whole design challenge:
 
@@ -50,7 +44,7 @@ drop them in and update the relevant files noted in the index.
 
 ---
 
-## CONTENT FUNDAMENTALS — how Avery Sloane writes
+## CONTENT FUNDAMENTALS — how Laura Denby writes
 
 The voice is **the warm-but-credible expert**: plain-spoken, confident, never
 hypey. It sounds like a senior engineer who has also sat in the boardroom.
@@ -219,9 +213,6 @@ the warm paper + Pine + one Clay accent do the work.
 
 ## Caveats / help me make this perfect
 
-- **The name is a placeholder.** `Avery Sloane`, the `AS` monogram, and all
-  sample copy are stand-ins. Give me the real name + tagline and I'll thread it
-  through every file and the mark.
 - **Fonts load from Google Fonts CDN** (Newsreader, Hanken Grotesk, IBM Plex
   Mono) — all free and self-hostable. Say the word if you want them vendored
   into `fonts/` for a fully offline package.
