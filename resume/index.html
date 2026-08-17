@@ -68,10 +68,46 @@
   }
   .cover__meta i { width: 3px; height: 3px; border-radius: 999px; background: var(--clay-400); display: inline-block; }
   @media (max-width: 600px) { .cover__meta { position: static; margin-top: 48px; } }
+
+  /* ambient orbs */
+  .cover__orb {
+    position: absolute; border-radius: 50%; pointer-events: none;
+    filter: blur(80px); will-change: transform;
+  }
+  .cover__orb.o1 {
+    width: 560px; height: 560px; background: var(--pine-200); opacity: 0.55;
+    top: -15%; left: -18%; animation: orb1 22s ease-in-out infinite;
+  }
+  .cover__orb.o2 {
+    width: 380px; height: 380px; background: var(--clay-200); opacity: 0.5;
+    top: 5%; right: -12%; animation: orb2 28s ease-in-out infinite;
+  }
+  .cover__orb.o3 {
+    width: 300px; height: 300px; background: var(--pine-300); opacity: 0.38;
+    bottom: 8%; left: 28%; animation: orb3 18s ease-in-out infinite;
+  }
+  @keyframes orb1 {
+    0%,100% { transform: translate(0,0) scale(1); }
+    33%      { transform: translate(50px,-40px) scale(1.06); }
+    66%      { transform: translate(-30px,25px) scale(0.96); }
+  }
+  @keyframes orb2 {
+    0%,100% { transform: translate(0,0) scale(1); }
+    40%     { transform: translate(-45px,35px) scale(1.05); }
+    75%     { transform: translate(22px,-22px) scale(0.97); }
+  }
+  @keyframes orb3 {
+    0%,100% { transform: translate(0,0) scale(1); }
+    50%     { transform: translate(-28px,-38px) scale(1.09); }
+  }
+  @media (prefers-reduced-motion: reduce) { .cover__orb { animation: none; } }
 </style>
 </head>
 <body>
   <main class="cover" id="cover">
+    <div class="cover__orb o1" aria-hidden="true"></div>
+    <div class="cover__orb o2" aria-hidden="true"></div>
+    <div class="cover__orb o3" aria-hidden="true"></div>
     <div class="cover__wm" aria-hidden="true">L</div>
     <div class="cover__inner">
       <div class="eyebrow cover__eyebrow anim a2">IT Business Analyst &nbsp;·&nbsp; Sydney, Australia</div>
@@ -106,6 +142,31 @@
       if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); enter(); }
     });
 
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Watermark parallax
+    if (!reduced) {
+      var wm = document.querySelector('.cover__wm');
+      document.addEventListener('mousemove', function (e) {
+        var x = (e.clientX / window.innerWidth  - 0.5) * 32;
+        var y = (e.clientY / window.innerHeight - 0.5) * 16;
+        wm.style.transform = 'translate(' + x + 'px,' + y + 'px)';
+      });
+    }
+
+    // Magnetic CTA button
+    if (!reduced) {
+      var btn = document.getElementById('enter');
+      btn.addEventListener('mousemove', function (e) {
+        var r = btn.getBoundingClientRect();
+        var x = (e.clientX - r.left - r.width  / 2) * 0.28;
+        var y = (e.clientY - r.top  - r.height / 2) * 0.28;
+        btn.style.transform = 'translate(' + x + 'px,' + y + 'px)';
+      });
+      btn.addEventListener('mouseleave', function () {
+        btn.style.transform = '';
+      });
+    }
   </script>
 </body>
 </html>
