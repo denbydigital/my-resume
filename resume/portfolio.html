@@ -19,6 +19,8 @@
   .proj-card:hover { box-shadow: var(--shadow-md); border-color: var(--stone-300); transform: translateY(-2px); }
   .proj-card__top { display: flex; align-items: center; justify-content: space-between; }
   .proj-card__co { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.05em; color: var(--fg-3); text-transform: uppercase; }
+  .proj-card__logo { height: 32px; max-width: 100px; object-fit: contain; object-position: left center; display: block; }
+  .modal__logo { height: 40px; max-width: 140px; object-fit: contain; object-position: left center; display: block; margin-bottom: 12px; }
   .proj-card__open { width: 30px; height: 30px; border-radius: 999px; background: var(--stone-100); display: flex; align-items: center; justify-content: center; color: var(--pine-700); transition: background var(--dur), color var(--dur); }
   .proj-card__open .ic { width: 16px; height: 16px; }
   .proj-card:hover .proj-card__open { background: var(--pine-600); color: #fff; }
@@ -103,7 +105,9 @@
         return (
           '<button class="proj-card" data-id="' + i + '">' +
             '<div class="proj-card__top">' +
-            '<span class="proj-card__open"><i class="ic" data-lucide="arrow-up-right"></i></span></div>' +
+              (p.logo ? '<img class="proj-card__logo" src="' + p.logo + '" alt="' + p.title + ' logo">' : '<span></span>') +
+              '<span class="proj-card__open"><i class="ic" data-lucide="arrow-up-right"></i></span>' +
+            '</div>' +
             '<h3>' + p.title + '</h3>' +
             '<p>' + p.blurb + '</p>' +
             '<div class="tags">' + p.tags.map(tagHTML).join('') + '</div>' +
@@ -114,7 +118,8 @@
       var modal = document.getElementById('modal');
       function open(i) {
         var p = PROJECTS[i];
-        document.getElementById('m-co').textContent = '';
+        var mco = document.getElementById('m-co');
+        mco.innerHTML = p.logo ? '<img class="modal__logo" src="' + p.logo + '" alt="' + p.title + ' logo">' : '';
         document.getElementById('m-title').textContent = p.title;
         document.getElementById('m-tags').innerHTML = p.tags.map(tagHTML).join('');
         document.getElementById('m-blurb').textContent = p.blurb;

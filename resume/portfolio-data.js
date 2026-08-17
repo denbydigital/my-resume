@@ -2,6 +2,7 @@
 var PROJECTS = [
   {
     title: 'FashionBiz B2B Portal Integration',
+    logo: 'assets/fashion-biz-logo.jpg',
     tags: ['integration', 'dynamics365', 'ecommerce', 'AI'],
     blurb: 'Full integration between a customer-facing B2B ecommerce portal and Microsoft Business Central, via BizCoLab / BCIP middleware.',
     detail: [
@@ -14,6 +15,7 @@ var PROJECTS = [
   },
   {
     title: 'Lite \'N Easy',
+    logo: 'assets/lite-n-easy-logo.png',
     tags: ['ecommerce', 'UI', 'design'],
     blurb: 'Short engagement gathering and documenting design requirements for a website UI uplift, coordinating across multiple vendors.',
     detail: [
@@ -24,6 +26,7 @@ var PROJECTS = [
   },
   {
     title: 'Queensland Law Society',
+    logo: 'assets/qlss-logo.png',
     tags: ['legal', 'portal', 'dynamics365'],
     blurb: 'Custom-built customer portal integrated with Microsoft Dynamics 365 CE — from wireframes to go-live.',
     detail: [
@@ -35,6 +38,7 @@ var PROJECTS = [
   },
   {
     title: 'SHK AI',
+    logo: 'assets/shk-logo.jpg',
     tags: ['AI', 'recruitment'],
     blurb: 'An LLM platform for pitching candidates, generating proposals, cover letters, resumes and candidate reports.',
     detail: [
@@ -59,6 +63,7 @@ var PROJECTS = [
   },
   {
     title: 'Clear Horizon',
+    logo: 'assets/clear-horizon-logo.jpeg',
     tags: ['philanthropy'],
     blurb: 'A short engagement to build out a charity’s project ways of working and hand them a clean delivery setup.',
     detail: [
@@ -69,8 +74,9 @@ var PROJECTS = [
     ]
   },
   {
-    title: 'G’day Parks Mobile App',
-    tags: ['retail', 'hospitality', 'travel'],
+    title: ‘G’day Parks Mobile App’,
+    logo: ‘assets/gday-logo.png’,
+    tags: [‘retail’, ‘hospitality’, ‘travel’],
     blurb: 'Senior BA &amp; Scrum Master on a co-delivery team rebuilding the G’day Parks mobile app into Flutter.',
     detail: [
       'Hosted discovery workshops with stakeholder focus groups across a 4-week discovery, 12-week build and 2–3 week handover.',
@@ -82,6 +88,7 @@ var PROJECTS = [
   },
   {
     title: 'Anca AutoMarkX',
+    logo: 'assets/anca-logo.jpg',
     tags: ['manufacturing'],
     blurb: 'Guided a dev team delivering AMX, a WPF application driving Anca’s laser tool-marking machine.',
     detail: [
@@ -93,6 +100,7 @@ var PROJECTS = [
   },
   {
     title: 'DrTalk',
+    logo: 'assets/drtalk-logo.png',
     tags: ['healthcare'],
     blurb: 'A HIPAA-compliant communication platform for dental offices: WPF desktop, iOS, Android and a web admin portal.',
     detail: [
@@ -106,6 +114,7 @@ var PROJECTS = [
   },
   {
     title: 'Opteon',
+    logo: 'assets/opteon-logo.png',
     tags: ['realestate'],
     blurb: 'Scoped and built a white-label iOS app for an international valuation &amp; property services provider.',
     detail: [
@@ -118,6 +127,7 @@ var PROJECTS = [
   },
   {
     title: "O'Brien",
+    logo: 'assets/obrien-logo.png',
     tags: ['manufacturing', 'automotive'],
     blurb: "Rebuilt the mobile app (Windows → Android) for a vehicle-glass company serving 360,000+ drivers a year.",
     detail: [
@@ -131,6 +141,7 @@ var PROJECTS = [
   },
   {
     title: '60 Seconds',
+    logo: 'assets/60-logo.png',
     tags: ['marketing', 'sales'],
     blurb: 'A mobile app delivering tailored coaching to drive measurable improvement in sales, marketing and communication.',
     detail: [
@@ -144,6 +155,7 @@ var PROJECTS = [
   },
   {
     title: 'AIMS &amp; Sewer Viewer',
+    logo: 'assets/calm-logo.jpg',
     tags: ['utilities'],
     blurb: 'Products to manage, track and report on the UK waste-water network, with integrated vehicle tracking and office stats boards.',
     detail: [
