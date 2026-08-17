@@ -21,7 +21,6 @@
         '<a class="brand" href="about.html" aria-label="Laura Denby home"><b>Laura Denby</b></a>' +
         '<nav class="site-nav" aria-label="Primary">' +
           links +
-          '<a href="contact.html" class="nav-cta' + (active === 'contact' ? ' is-active' : '') + '">Get in touch</a>' +
         '</nav>' +
         '<button class="nav-burger" id="nav-burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav" aria-haspopup="dialog">' +
           '<span></span><span></span><span></span>' +
@@ -44,7 +43,6 @@
         '<nav aria-label="Mobile navigation">' +
           links +
         '</nav>' +
-        '<a href="contact.html" class="mnav__cta' + (active === 'contact' ? ' is-active' : '') + '">Get in touch</a>' +
       '</div>'
     );
   }
@@ -55,17 +53,9 @@
     }).join('');
     return (
       '<div class="wrap">' +
-        '<div class="foot-cta">' +
-          '<div>' +
-            '<div class="eyebrow" style="color:var(--clay-600)">Let’s talk</div>' +
-            '<h2>Looking for a BA who can bridge business, tech and AI?</h2>' +
-            '<p>I take on a small number of engagements at a time, so you get my actual attention.</p>' +
-          '</div>' +
-          '<a class="btn btn--on-dark btn--lg" href="contact.html">Get in touch <i class="ic" data-lucide="arrow-right"></i></a>' +
-        '</div>' +
         '<div class="foot-base">' +
           '<a class="brand" href="about.html"><b>Laura Denby</b></a>' +
-          '<nav class="foot-nav" aria-label="Footer">' + links + '<a href="htc.html">Her Tech Circle</a><a href="contact.html">Contact</a></nav>' +
+          '<nav class="foot-nav" aria-label="Footer">' + links + '<a href="htc.html">Her Tech Circle</a></nav>' +
           '<span class="foot-copy">© 2026 Laura Denby · IT Business Analyst</span>' +
         '</div>' +
       '</div>'
