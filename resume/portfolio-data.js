@@ -74,9 +74,9 @@ var PROJECTS = [
     ]
   },
   {
-    title: ‘G’day Parks Mobile App’,
-    logo: ‘assets/gday-logo.png’,
-    tags: [‘retail’, ‘hospitality’, ‘travel’],
+    title: 'G’day Parks Mobile App',
+    logo: 'assets/gday-logo.png',
+    tags: ['retail', 'hospitality', 'travel'],
     blurb: 'Senior BA &amp; Scrum Master on a co-delivery team rebuilding the G’day Parks mobile app into Flutter.',
     detail: [
       'Hosted discovery workshops with stakeholder focus groups across a 4-week discovery, 12-week build and 2–3 week handover.',
@@ -133,7 +133,7 @@ var PROJECTS = [
     detail: [
       'Created the backlog with epics, features and stories (including acceptance criteria).',
       'Led sprint planning and review; ran backlog grooming and daily stand-ups.',
-      'Conducted design review meetings with both XAM and O’Brien teams and tested each sprint’s build.',
+      "Conducted design review meetings with both XAM and O'Brien teams and tested each sprint's build.",
       'Created and showcased weekly progress reports and app builds.'
     ],
     featuresTitle: 'Job workflow built',
