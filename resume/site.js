@@ -164,6 +164,44 @@
     var sp = document.createElement('script');
     sp.src = 'sparkle.js';
     document.body.appendChild(sp);
+
+    // Enable scroll reveal
+    document.documentElement.classList.add('js-ready');
+    var revealEls = document.querySelectorAll('[data-reveal]');
+    if (revealEls.length && 'IntersectionObserver' in window) {
+      var revealObs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-revealed');
+          revealObs.unobserve(entry.target);
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -48px 0px' });
+      revealEls.forEach(function (el) { revealObs.observe(el); });
+    }
+
+    // Count-up animation for [data-count] elements
+    var counterEls = document.querySelectorAll('[data-count]');
+    if (counterEls.length && 'IntersectionObserver' in window &&
+        !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      var counterObs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          var el = entry.target;
+          var target = +el.getAttribute('data-count');
+          var suffix = el.getAttribute('data-suffix') || '';
+          var dur = 1400;
+          var t0 = performance.now();
+          (function tick(now) {
+            var p = Math.min((now - t0) / dur, 1);
+            var ease = 1 - Math.pow(1 - p, 3);
+            el.textContent = Math.round(target * ease) + suffix;
+            if (p < 1) requestAnimationFrame(tick);
+          }(performance.now()));
+          counterObs.unobserve(el);
+        });
+      }, { threshold: 0.5 });
+      counterEls.forEach(function (el) { counterObs.observe(el); });
+    }
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);

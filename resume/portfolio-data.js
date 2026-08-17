@@ -14,6 +14,29 @@ var PROJECTS = [
     ]
   },
   {
+    title: 'Website UI Uplift',
+    company: 'Lite n’ Easy × Olympic33', period: 'Jun 2025 – Jan 2026',
+    tags: ['ecommerce', 'UI', 'design'],
+    blurb: 'Short engagement gathering and documenting design requirements for Lite n’ Easy’s website UI uplift, coordinating across multiple vendors.',
+    detail: [
+      'Worked directly with the client to gather and document design requirements for a full look-and-feel refresh of their website.',
+      'Coordinated across 3–4 vendors simultaneously, keeping requirements aligned and communication clear throughout.',
+      'Produced structured design documentation to support a smooth handoff and consistent build across vendor teams.'
+    ]
+  },
+  {
+    title: 'Customer Portal',
+    company: 'Queensland Law Society × Olympic33', period: 'Oct 2024 – Jun 2025',
+    tags: ['legal', 'portal', 'dynamics365'],
+    blurb: 'Custom-built customer portal for Queensland Law Society, integrated with Microsoft Dynamics 365 CE — from wireframes to go-live.',
+    detail: [
+      'Wireframed the customer portal and ran discovery and requirements workshops with QLS stakeholders.',
+      'Led the scrum team through the full delivery lifecycle, validating requirements with the customer at each stage and managing scope and prioritisation throughout.',
+      'Saw the product through to go-live, coordinating stakeholder sign-off and managing delivery risk.',
+      'Collaborated with the MD365 CE team on integration design; led API sessions and gathered requirements for data flowing from the portal back into Dynamics 365 CE.'
+    ]
+  },
+  {
     title: 'Recruitment AI Automation',
     company: 'Olympic33', period: 'Recent',
     tags: ['AI', 'recruitment'],
