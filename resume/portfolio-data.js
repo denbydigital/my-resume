@@ -2,7 +2,6 @@
 var PROJECTS = [
   {
     title: 'FashionBiz B2B Portal Integration',
-    company: 'Olympic33', period: '2024 – Present',
     tags: ['integration', 'dynamics365', 'ecommerce', 'AI'],
     blurb: 'Full integration between a customer-facing B2B ecommerce portal and Microsoft Business Central, via BizCoLab / BCIP middleware.',
     detail: [
@@ -14,10 +13,9 @@ var PROJECTS = [
     ]
   },
   {
-    title: 'Website UI Uplift',
-    company: 'Lite n’ Easy × Olympic33', period: 'Jun 2025 – Jan 2026',
+    title: 'Lite \'N Easy',
     tags: ['ecommerce', 'UI', 'design'],
-    blurb: 'Short engagement gathering and documenting design requirements for Lite n’ Easy’s website UI uplift, coordinating across multiple vendors.',
+    blurb: 'Short engagement gathering and documenting design requirements for a website UI uplift, coordinating across multiple vendors.',
     detail: [
       'Worked directly with the client to gather and document design requirements for a full look-and-feel refresh of their website.',
       'Coordinated across 3–4 vendors simultaneously, keeping requirements aligned and communication clear throughout.',
@@ -25,10 +23,9 @@ var PROJECTS = [
     ]
   },
   {
-    title: 'Customer Portal',
-    company: 'Queensland Law Society × Olympic33', period: 'Oct 2024 – Jun 2025',
+    title: 'Queensland Law Society',
     tags: ['legal', 'portal', 'dynamics365'],
-    blurb: 'Custom-built customer portal for Queensland Law Society, integrated with Microsoft Dynamics 365 CE — from wireframes to go-live.',
+    blurb: 'Custom-built customer portal integrated with Microsoft Dynamics 365 CE — from wireframes to go-live.',
     detail: [
       'Wireframed the customer portal and ran discovery and requirements workshops with QLS stakeholders.',
       'Led the scrum team through the full delivery lifecycle, validating requirements with the customer at each stage and managing scope and prioritisation throughout.',
@@ -37,8 +34,7 @@ var PROJECTS = [
     ]
   },
   {
-    title: 'Recruitment AI Automation',
-    company: 'Olympic33', period: 'Recent',
+    title: 'SHK AI',
     tags: ['AI', 'recruitment'],
     blurb: 'An LLM platform for pitching candidates, generating proposals, cover letters, resumes and candidate reports.',
     detail: [
@@ -52,7 +48,6 @@ var PROJECTS = [
   },
   {
     title: 'Houdini',
-    company: 'XAM', period: '2024',
     tags: ['AI', 'websitebuilder', 'marketing'],
     blurb: "XAM's own product, billed as the world's first website creation platform built from the ground up for AI.",
     detail: [
@@ -63,10 +58,9 @@ var PROJECTS = [
     ]
   },
   {
-    title: 'Think Clear',
-    company: 'XAM', period: 'Short contract',
+    title: 'Clear Horizon',
     tags: ['philanthropy'],
-    blurb: 'A short engagement to build out a charity\u2019s project ways of working and hand them a clean delivery setup.',
+    blurb: 'A short engagement to build out a charity’s project ways of working and hand them a clean delivery setup.',
     detail: [
       'Set up Jira and translated an already-designed product and its business rules into user stories with acceptance criteria and designs.',
       'Created handover documentation including process maps, requirements matrices and API docs in Confluence.',
@@ -75,12 +69,11 @@ var PROJECTS = [
     ]
   },
   {
-    title: 'G\u2019day Parks Mobile App',
-    company: 'G\u2019DAY GROUP × XAM', period: 'Co-delivery',
+    title: 'G’day Parks Mobile App',
     tags: ['retail', 'hospitality', 'travel'],
-    blurb: 'Senior BA &amp; Scrum Master on a co-delivery team rebuilding the G\u2019day Parks mobile app into Flutter.',
+    blurb: 'Senior BA &amp; Scrum Master on a co-delivery team rebuilding the G’day Parks mobile app into Flutter.',
     detail: [
-      'Hosted discovery workshops with stakeholder focus groups across a 4-week discovery, 12-week build and 2\u20133 week handover.',
+      'Hosted discovery workshops with stakeholder focus groups across a 4-week discovery, 12-week build and 2–3 week handover.',
       'Prepped, planned and facilitated all scrum ceremonies.',
       'Built traceability matrices and reusable templates; kept user stories transparent and re-usable.',
       'Created project plans with delivery dashboards, burn-down / up and Gantt charts.',
@@ -89,19 +82,17 @@ var PROJECTS = [
   },
   {
     title: 'Anca AutoMarkX',
-    company: 'Anca × XAM', period: 'Senior BA',
     tags: ['manufacturing'],
-    blurb: 'Guided a dev team delivering AMX, a WPF application driving Anca\u2019s laser tool-marking machine.',
+    blurb: 'Guided a dev team delivering AMX, a WPF application driving Anca’s laser tool-marking machine.',
     detail: [
       'Gathered requirements for how the robot and laser machine should coordinate with other products.',
       'Supported alignment between hardware and software so tools can be marked from all angles.',
       'Acted as Scrum Master, providing facilitation and guidance to the team.',
-      'Upgraded the application\u2019s UI / UX, kept consistent with existing Anca products, and assisted with QA.'
+      'Upgraded the application’s UI / UX, kept consistent with existing Anca products, and assisted with QA.'
     ]
   },
   {
-    title: 'DoctorChat',
-    company: 'XAM', period: 'BA / SM / PM',
+    title: 'DrTalk',
     tags: ['healthcare'],
     blurb: 'A HIPAA-compliant communication platform for dental offices: WPF desktop, iOS, Android and a web admin portal.',
     detail: [
@@ -115,7 +106,6 @@ var PROJECTS = [
   },
   {
     title: 'Opteon',
-    company: 'Opteon × XAM', period: 'Co-delivery',
     tags: ['realestate'],
     blurb: 'Scoped and built a white-label iOS app for an international valuation &amp; property services provider.',
     detail: [
@@ -128,13 +118,12 @@ var PROJECTS = [
   },
   {
     title: "O'Brien",
-    company: 'XAM', period: 'Hybrid BA / PM',
     tags: ['manufacturing', 'automotive'],
     blurb: "Rebuilt the mobile app (Windows → Android) for a vehicle-glass company serving 360,000+ drivers a year.",
     detail: [
       'Created the backlog with epics, features and stories (including acceptance criteria).',
       'Led sprint planning and review; ran backlog grooming and daily stand-ups.',
-      'Conducted design review meetings with both XAM and O\u2019Brien teams and tested each sprint\u2019s build.',
+      'Conducted design review meetings with both XAM and O’Brien teams and tested each sprint’s build.',
       'Created and showcased weekly progress reports and app builds.'
     ],
     featuresTitle: 'Job workflow built',
@@ -142,7 +131,6 @@ var PROJECTS = [
   },
   {
     title: '60 Seconds',
-    company: 'XAM', period: 'Scrum Master',
     tags: ['marketing', 'sales'],
     blurb: 'A mobile app delivering tailored coaching to drive measurable improvement in sales, marketing and communication.',
     detail: [
@@ -156,11 +144,10 @@ var PROJECTS = [
   },
   {
     title: 'AIMS &amp; Sewer Viewer',
-    company: 'CALM Group Ltd', period: '2012 – 2018',
     tags: ['utilities'],
     blurb: 'Products to manage, track and report on the UK waste-water network, with integrated vehicle tracking and office stats boards.',
     detail: [
-      'Worked across CALM\u2019s two main products, AIMS and Sewer Viewer, and integrated the Masternaut vehicle tracking &amp; scheduling system.',
+      'Worked across CALM’s two main products, AIMS and Sewer Viewer, and integrated the Masternaut vehicle tracking &amp; scheduling system.',
       'Drove digital notice boards displaying daily team and vehicle statistics in the office.',
       'As a start-up, led implementation of process-management systems across the business:',
       'ISO 9001 Quality · OHSAS 18001 Health &amp; Safety · ISO 14001 Environmental · ISO 27001 Information Security.'
