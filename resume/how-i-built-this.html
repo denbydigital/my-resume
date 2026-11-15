@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How I Built This · Laura Denby</title>
+<link rel="stylesheet" href="styles/tokens.css">
+<link rel="stylesheet" href="styles/site.css">
+<style>
+  .timeline { display: flex; flex-direction: column; gap: 0; position: relative; }
+  .timeline::before {
+    content: ''; position: absolute; left: 20px; top: 8px; bottom: 8px; width: 2px;
+    background: linear-gradient(to bottom, var(--pine-300), var(--clay-300), var(--pine-200));
+    border-radius: 999px;
+  }
+  .tl-item { display: flex; gap: 28px; padding-bottom: 40px; }
+  .tl-item:last-child { padding-bottom: 0; }
+  .tl-node {
+    flex: none; width: 42px; height: 42px; border-radius: 50%;
+    background: var(--pine-50); border: 2px solid var(--pine-300);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--pine-600); position: relative; z-index: 1;
+  }
+  .tl-node .ic { width: 18px; height: 18px; }
+  .tl-node.clay { background: var(--clay-50); border-color: var(--clay-300); color: var(--clay-600); }
+  .tl-body { flex: 1; padding-top: 9px; }
+  .tl-body h3 { font-family: var(--font-serif); font-weight: 500; font-size: 20px; letter-spacing: -0.01em; margin: 0 0 6px; }
+  .tl-body p { font-size: 15px; line-height: 1.65; color: var(--fg-2); margin: 0 0 12px; }
+  .tl-body p:last-child { margin-bottom: 0; }
+  .tl-body .detail { font-size: 14px; color: var(--fg-3); font-family: var(--font-mono); letter-spacing: 0.03em; margin: 0 0 10px; display: block; }
+
+  .insight-box {
+    background: var(--pine-50); border: 1px solid var(--pine-200); border-radius: var(--r-lg);
+    padding: 28px 32px; display: flex; gap: 18px; align-items: flex-start;
+  }
+  .insight-box .ic { color: var(--clay-500); width: 22px; height: 22px; flex: none; margin-top: 2px; }
+  .insight-box p { font-size: 15.5px; line-height: 1.65; color: var(--pine-800); margin: 0; }
+  .insight-box p em { color: var(--clay-700); font-style: italic; }
+
+  .prompt-block {
+    background: var(--stone-50); border: 1px solid var(--stone-200); border-radius: var(--r-md);
+    padding: 16px 20px; margin-top: 12px;
+    font-family: var(--font-mono); font-size: 13px; line-height: 1.6; color: var(--fg-2);
+  }
+  .prompt-block strong { color: var(--fg-3); font-weight: 400; display: block; margin-bottom: 4px; font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; }
+
+  @media (max-width: 600px) {
+    .timeline::before { left: 15px; }
+    .tl-node { width: 32px; height: 32px; }
+    .tl-node .ic { width: 14px; height: 14px; }
+    .tl-item { gap: 18px; }
+    .insight-box { flex-direction: column; gap: 10px; }
+  }
+</style>
+</head>
+<body data-page="hibt">
+  <header id="site-header"></header>
+
+  <main class="page">
+    <section class="page-hero">
+      <div class="wrap">
+        <div class="eyebrow">How I built this</div>
+        <h1>A live demo of AI-assisted delivery — this site itself.</h1>
+        <p class="lede measure">Every page on this site was built through conversation with Claude. Here's the step-by-step of how I did it, because the process is as much part of my practice as the output.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="insight-box" data-reveal>
+          <i class="ic" data-lucide="lightbulb"></i>
+          <p>I'm an IT Business Analyst. I don't write production code for a living — I analyse, translate and facilitate. What I <em>do</em> know how to do is describe a problem precisely, iterate quickly on feedback, and spot when something isn't right. It turns out those are exactly the skills you need to build with AI.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--sunk">
+      <div class="wrap">
+        <div class="section__head">
+          <div class="eyebrow">The build</div>
+          <h2>Step by step, start to finish.</h2>
+        </div>
+        <div class="timeline" data-reveal>
+
+          <div class="tl-item">
+            <div class="tl-node"><i class="ic" data-lucide="compass"></i></div>
+            <div class="tl-body">
+              <span class="detail">Step 1 &nbsp;·&nbsp; Brand &amp; direction</span>
+              <h3>Starting with a brief, not a blank canvas</h3>
+              <p>I didn't hand Claude a brief and say "make me a website." I described what I <em>didn't</em> want — contractor-dark, blue, boring tech-resume energy — and what I did: something that looked more like a design portfolio, reflected the work I actually do, and felt like me.</p>
+              <p>We landed on the <strong>Ink &amp; Leaf</strong> direction: deep forest green primary, warm amber gold accent. I approved the palette, the font pairing (Newsreader serif + Hanken Grotesk sans), and the overall mood before a single page existed.</p>
+            </div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-node"><i class="ic" data-lucide="palette"></i></div>
+            <div class="tl-body">
+              <span class="detail">Step 2 &nbsp;·&nbsp; Design system</span>
+              <h3>Building a token-based design system from scratch</h3>
+              <p>Claude generated a complete CSS custom-property token system — colours, spacing, typography, radii, shadows — all in OKLCH colour space for perceptual consistency. The rule was: no hardcoded hex or rgb values anywhere in the site. If it's a colour, it comes from a token.</p>
+              <p>That discipline meant that when I changed my mind about a tint, it updated everywhere. As a BA I spend a lot of time building traceability. This was the same idea, applied to a design system.</p>
+            </div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-node"><i class="ic" data-lucide="layout-template"></i></div>
+            <div class="tl-body">
+              <span class="detail">Step 3 &nbsp;·&nbsp; Page architecture</span>
+              <h3>Six inner pages and a landing — structured like a product</h3>
+              <p>I scoped the site the same way I'd scope a product: define the pages, the purpose of each, and what a visitor should take away. About, Experience, AI Practice, Portfolio, Credentials, Contact — each with a clear job to do.</p>
+              <p>Claude built shared layout infrastructure (site.js injects the header, footer and mobile nav into every page via a single JS file) so the structure is maintained in one place. Exactly the kind of single-source-of-truth I'd argue for in any delivery.</p>
+            </div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-node"><i class="ic" data-lucide="database"></i></div>
+            <div class="tl-body">
+              <span class="detail">Step 4 &nbsp;·&nbsp; Portfolio data</span>
+              <h3>13 projects, structured as data, not markup</h3>
+              <p>Rather than hardcoding each portfolio entry into HTML, Claude architected a <code>portfolio-data.js</code> data file. Every project — title, blurb, tags, detail bullets, features, logo — lives in one structured array. The portfolio page renders them dynamically, including a slide-up modal for detail.</p>
+              <p>When I wanted to rename projects, reorder them, or add two new entries (Queensland Law Society and Lite 'N Easy), it was a data change, not a markup surgery. That's the kind of separation-of-concerns I'd advocate for in any system design.</p>
+              <div class="prompt-block">
+                <strong>Prompt I used</strong>
+                "DoctorChat can be renamed to DrTalk, ThinkClear can be renamed to Clear Horizon, Recruitment AI Automation can be renamed to SHK AI, Customer Portal can be renamed to Queensland Law Society, Website UI Uplift can be renamed to Lite 'N Easy. You can remove the dates from everything and the company against them."
+              </div>
+            </div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-node clay"><i class="ic" data-lucide="sparkles"></i></div>
+            <div class="tl-body">
+              <span class="detail">Step 5 &nbsp;·&nbsp; Iteration</span>
+              <h3>Shipping fast, then improving in conversation</h3>
+              <p>The landing page originally had a large decorative "L" watermark I didn't like. I pointed at a screenshot and said exactly that. Claude removed it and suggested replacing it with a circular headshot. I said yes. That interaction took about 60 seconds.</p>
+              <p>This is the part most people miss when they talk about AI — it's not about generating a thing once. It's about being able to describe what's wrong and iterate in real time, the same way you'd work with a developer in a sprint review.</p>
+            </div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-node"><i class="ic" data-lucide="image"></i></div>
+            <div class="tl-body">
+              <span class="detail">Step 6 &nbsp;·&nbsp; Assets</span>
+              <h3>Logos, photography and visual polish</h3>
+              <p>I sourced and added 12 company logos to the assets folder, then asked Claude to wire them into the portfolio cards and modals. That meant updating the data schema, the card render template, the modal open function and the CSS — all consistent, all working, in one pass.</p>
+              <p>When logos didn't appear on the live site, we debugged it together: they'd been created locally but never committed to git. Identified, explained, fixed.</p>
+            </div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-node"><i class="ic" data-lucide="git-branch"></i></div>
+            <div class="tl-body">
+              <span class="detail">Step 7 &nbsp;·&nbsp; Deployment</span>
+              <h3>GitHub and GitHub Pages, managed through conversation</h3>
+              <p>The whole project is version-controlled in Git and deployed to GitHub Pages. I created the repo and set up Pages myself; everything after that — branching, committing, raising PRs, merging — was done through Claude in the terminal.</p>
+              <p>When I wanted a change live, I'd say "PR please." When I wanted to merge it, I'd say "merge." I didn't write a single git command manually.</p>
+            </div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-node clay"><i class="ic" data-lucide="file-text"></i></div>
+            <div class="tl-body">
+              <span class="detail">Step 8 &nbsp;·&nbsp; Beyond the site</span>
+              <h3>A cover letter, written and formatted as a PDF</h3>
+              <p>Once the site was up, I used the same session to draft a cover letter for a role I was excited about. I described the company, shared what I genuinely love about their brand, mentioned I live locally, and asked for a PDF with my headshot. Claude wrote it, generated the PDF with pdfkit, and iterated on tone, formatting and length until it fit on one page.</p>
+              <p>That's the broader point: the same AI-assisted workflow that built this site is the one I bring to delivery work every day.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="card-grid cols-2" style="gap:40px">
+          <div>
+            <div class="section__head" style="margin-bottom:18px">
+              <div class="eyebrow">The tools</div>
+              <h2 style="font-size:24px">What I actually used</h2>
+            </div>
+            <ul class="ticks">
+              <li><i class="ic" data-lucide="terminal"></i>Claude Code — desktop app, agentic mode</li>
+              <li><i class="ic" data-lucide="code-2"></i>HTML, CSS, vanilla JS — no framework, no build step</li>
+              <li><i class="ic" data-lucide="git-merge"></i>Git + GitHub Pages — version control and hosting</li>
+              <li><i class="ic" data-lucide="file-output"></i>pdfkit (Node.js) — PDF generation for the cover letter</li>
+            </ul>
+          </div>
+          <div>
+            <div class="section__head" style="margin-bottom:18px">
+              <div class="eyebrow">The practice</div>
+              <h2 style="font-size:24px">What made it work</h2>
+            </div>
+            <ul class="ticks">
+              <li><i class="ic" data-lucide="check"></i>Describing outcomes, not solutions</li>
+              <li><i class="ic" data-lucide="check"></i>Reviewing output critically before approving</li>
+              <li><i class="ic" data-lucide="check"></i>Iterating fast on feedback instead of re-specifying</li>
+              <li><i class="ic" data-lucide="check"></i>Keeping a single source of truth for data and tokens</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--sunk">
+      <div class="wrap" style="max-width:720px">
+        <blockquote style="font-family:var(--font-serif);font-weight:400;font-size:22px;line-height:1.5;color:var(--pine-900);margin:0;border-left:3px solid var(--clay-400);padding-left:28px;">
+          "I didn't write this site. I directed it. The difference is exactly what a good BA does."
+        </blockquote>
+        <p style="margin-top:20px;font-size:15px;color:var(--fg-3);font-family:var(--font-mono);letter-spacing:0.04em;">— Laura Denby</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="site-footer"></footer>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="site.js"></script>
+</body>
+</html>
