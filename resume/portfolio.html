@@ -125,6 +125,10 @@
         document.getElementById('m-blurb').textContent = p.blurb;
         var body = '<h4>What I did</h4><ul class="ticks">' +
           p.detail.map(function (d) { return '<li><i class="ic" data-lucide="check"></i>' + d + '</li>'; }).join('') + '</ul>';
+        if (p.outcomes && p.outcomes.length) {
+          body += '<h4 style="color:var(--clay-600)">Achievements</h4><ul class="ticks">' +
+            p.outcomes.map(function (o) { return '<li class="clay"><i class="ic" data-lucide="trophy"></i>' + o + '</li>'; }).join('') + '</ul>';
+        }
         if (p.features && p.features.length) {
           body += '<h4>' + (p.featuresTitle || 'Selected features') + '</h4><div class="chips">' +
             p.features.map(function (f) { return '<span>' + f + '</span>'; }).join('') + '</div>';

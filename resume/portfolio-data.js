@@ -11,6 +11,10 @@ var PROJECTS = [
       "Developed a layered testing readiness model (L0 / L1 / L2) and structured test-approach documentation.",
       "Managed client &amp; internal comms across JWT auth, Azure AD provisioning, S3 image storage, live chat and historical data migration.",
       "Used Claude + MCP integrations (Azure DevOps, Microsoft 365, Figma) to accelerate artefact production and consolidate requirements from meeting transcripts."
+    ],
+    outcomes: [
+      "Delivered complete integration documentation across six workstreams, reducing ambiguity between three separate vendor teams",
+      "Testing readiness model adopted as the team's standard approach for the engagement"
     ]
   },
   {
@@ -22,6 +26,10 @@ var PROJECTS = [
       "Worked directly with the client to gather and document design requirements for a full look-and-feel refresh of their website.",
       "Coordinated across 3–4 vendors simultaneously, keeping requirements aligned and communication clear throughout.",
       "Produced structured design documentation to support a smooth handoff and consistent build across vendor teams."
+    ],
+    outcomes: [
+      "Delivered a complete, vendor-ready design requirements pack within the engagement timeframe",
+      "Requirements successfully adopted by all vendor teams, enabling a consistent build across the board"
     ]
   },
   {
@@ -34,6 +42,10 @@ var PROJECTS = [
       "Led the scrum team through the full delivery lifecycle, validating requirements with the customer at each stage and managing scope and prioritisation throughout.",
       "Saw the product through to go-live, coordinating stakeholder sign-off and managing delivery risk.",
       "Collaborated with the MD365 CE team on integration design; led API sessions and gathered requirements for data flowing from the portal back into Dynamics 365 CE."
+    ],
+    outcomes: [
+      "Portal went to go-live on schedule, with full stakeholder sign-off and no critical post-launch defects",
+      "Scrum team delivered the full backlog across discovery, build and UAT phases with scope maintained throughout"
     ]
   },
   {
@@ -47,6 +59,10 @@ var PROJECTS = [
       "Ran all scrum ceremonies and managed development-team escalations and blockers.",
       "QA tested in staging and facilitated UAT workshops and observations before production."
     ],
+    outcomes: [
+      "Product successfully released to production following UAT sign-off",
+      "Backlog delivered end-to-end using Agile / Scrum, from as-is discovery through to live deployment"
+    ],
     featuresTitle: "What the product does",
     features: ["Interview questions from a PD", "Cover letters from CV + PD", "Candidate reports", "Position proposals", "Long-list candidate ranking", "Outputs saved to SharePoint"]
   },
@@ -59,6 +75,10 @@ var PROJECTS = [
       "Worked with the software team on AI best practices: co-pilot methodology and AI-first UX / UI.",
       "Documented requirements on the internal PM system and ran delivery out of DevOps using Scrum.",
       "Supported a successful public launch in 2024."
+    ],
+    outcomes: [
+      "Product launched publicly in 2024, XAM's most ambitious internal build to date",
+      "Established AI-first UX and co-pilot methodology as a reusable internal practice"
     ]
   },
   {
@@ -71,6 +91,10 @@ var PROJECTS = [
       "Created handover documentation including process maps, requirements matrices and API docs in Confluence.",
       "Ran workshops teaching Scrum ways of working and facilitated ceremonies during the engagement.",
       "Ensured a smooth transition, handing over cleanly to the Director."
+    ],
+    outcomes: [
+      "Director took over a fully operational Jira setup with clean documentation and trained on Scrum ways of working",
+      "Smooth transition with no handover gaps — engagement closed on time and on scope"
     ]
   },
   {
@@ -84,6 +108,10 @@ var PROJECTS = [
       "Built traceability matrices and reusable templates; kept user stories transparent and re-usable.",
       "Created project plans with delivery dashboards, burn-down / up and Gantt charts.",
       "Handled APIs and ensured thorough testing through Stoplight → Swagger → app."
+    ],
+    outcomes: [
+      "App successfully rebuilt into Flutter across a 4-week discovery and 12-week build cycle",
+      "Reusable templates and traceability matrices handed over to the client for continued use post-engagement"
     ]
   },
   {
@@ -96,6 +124,10 @@ var PROJECTS = [
       "Supported alignment between hardware and software so tools can be marked from all angles.",
       "Acted as Scrum Master, providing facilitation and guidance to the team.",
       "Upgraded the application’s UI / UX, kept consistent with existing Anca products, and assisted with QA."
+    ],
+    outcomes: [
+      "WPF application delivered with an upgraded UI/UX consistent with Anca’s existing product family",
+      "Hardware and software coordination requirements fully documented and signed off"
     ]
   },
   {
@@ -108,6 +140,10 @@ var PROJECTS = [
       "Facilitated prioritisation, grooming, stand-ups, reviews and retros; managed DevOps and documented in Confluence.",
       "Agreed Definition of Ready / Done with the PO and signed off tickets alongside QA.",
       "Ran UAT training and released to production, onboarding over 80 dental offices across the US."
+    ],
+    outcomes: [
+      "Released to production with 80+ dental offices onboarded across the United States",
+      "Full multi-platform release: WPF desktop, iOS, Android and web admin portal"
     ],
     featuresTitle: "Features I worked on",
     features: ["Office &amp; patient chat", "Secure email inbox", "COVID-19 check-in", "Gamification / loyalty", "Team management console", "Secure patient SMS", "In-app e-fax", "Stripe payments", "Twilio SMS"]
@@ -123,6 +159,10 @@ var PROJECTS = [
       "Built epics, user stories and acceptance criteria from a concept map; documented as-is and to-be processes.",
       "Stepped into PM and QA roles as needed; held weekly governance meetings and reported status.",
       "Released on time to the Apple App Store."
+    ],
+    outcomes: [
+      "App released on time to the Apple App Store for an international property valuation provider",
+      "Delivered as BA, Scrum Master and acting PM — keeping scope, timeline and quality aligned throughout"
     ]
   },
   {
@@ -135,6 +175,10 @@ var PROJECTS = [
       "Led sprint planning and review; ran backlog grooming and daily stand-ups.",
       "Conducted design review meetings with both XAM and O’Brien teams and tested each sprint’s build.",
       "Created and showcased weekly progress reports and app builds."
+    ],
+    outcomes: [
+      "Android app successfully rebuilt from Windows, now serving 360,000+ drivers annually",
+      "Nine-step job workflow shipped end-to-end, from job list through to invoicing and close"
     ],
     featuresTitle: "Job workflow built",
     features: ["Job lists &amp; details", "Travel to site", "Site &amp; vehicle check", "Price check", "Pre-job inspection", "Fitting &amp; warranty", "Post-job inspection", "Payment (Square)", "Invoicing &amp; close"]
