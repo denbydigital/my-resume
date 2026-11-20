@@ -1,21 +1,29 @@
 /* portfolio-data.js -- Laura Denby's product evidence, reverse-chronological. */
 var PROJECTS = [
   {
-    title: "FashionBiz B2B Portal Integration",
+    title: "FashionBiz B2B and Supply Chain Portals",
     logo: "assets/fashion-biz-logo.jpg",
-    tags: ["integration", "dynamics365", "ecommerce", "AI"],
-    blurb: "Full integration between a customer-facing B2B ecommerce portal and Microsoft Business Central, via BizCoLab / BCIP middleware.",
+    tags: ["integration", "dynamics365", "ecommerce", "supplychain", "AI"],
+    blurb: "Lead BA on a three-portal programme (B2B customer, supplier and freight forwarder) integrated with Microsoft Dynamics 365 Business Central across Australia, New Zealand and Canada.",
     detail: [
-      "Mapped end-to-end integration flows for order management, payments, product sync and supplier workflows, as Mermaid sequence diagrams, state diagrams and happy / unhappy path flowcharts.",
-      "Produced structured epic &amp; feature tables for both the B2B Ecommerce and B2B Supplier platforms.",
-      "Developed a layered testing readiness model (L0 / L1 / L2) and structured test-approach documentation.",
-      "Managed client &amp; internal comms across JWT auth, Azure AD provisioning, S3 image storage, live chat and historical data migration.",
-      "Used Claude + MCP integrations (Azure DevOps, Microsoft 365, Figma) to accelerate artefact production and consolidate requirements from meeting transcripts."
+      "Ran discovery workshops across pricing, promotions, product data, inventory, orders, payments, freight and user management, building a 200+ item B2B backlog in Azure DevOps with Given / When / Then acceptance criteria, bulk-loaded via API so developers had dev-ready items from day one.",
+      "Defined pricing, promotions, tax, surcharge, freight and payment rules across three tax jurisdictions (including Canadian GST / HST / PST, split-shipment GST and COD handling), and escalated a contradictory promotions requirement for resolution before build.",
+      "Mapped the end-to-end inbound supply chain from global purchase order to DC receipt: vendor acceptance, overnight BC and Logility allocation runs, distribution POs, LPN packing and GS1 labels, container and vessel management.",
+      "Drove key supplier portal design decisions, including BC as the single source of truth after acceptance, a configurable &plusmn;5% auto-close tolerance, and moving ETD / ETA from vessel to container level.",
+      "Scoped and authored change requests for a public customer API, impersonation roles, drop ship fees, indent brand management, a three-column EXW date model and a &ldquo;Not Approved&rdquo; shipment line workflow.",
+      "Analysed integration touchpoints across Business Central, Manhattan WMS, Logility, DX2 middleware, Honeybee product data and Microsoft Entra ID authentication.",
+      "Produced test case registers (157 for the Supplier Portal alone), UAT scenarios and a BC versus portal status cross-reference, and planned and delivered Key User Training for buyers, admins, vendors and freight forwarders.",
+      "Built go-live run sheets and maintained a 55-item RAID log, raising go / no-go blockers and QA resourcing risks with leadership.",
+      "Used Claude + MCP integrations (Azure DevOps, Microsoft 365, Figma) to turn workshop transcripts into decision logs and action registers, generate acceptance criteria and automate ADO updates."
     ],
     outcomes: [
-      "Delivered complete integration documentation across six workstreams, reducing ambiguity between three separate vendor teams",
-      "Testing readiness model adopted as the team's standard approach for the engagement"
-    ]
+      "200+ dev-ready B2B requirements and 50+ supplier portal tickets delivered with full acceptance criteria",
+      "Go-live run sheets covering 117 tasks across two portals, with staggered regional cutovers and hypercare",
+      "Documented the Honeybee circular dependency and token reissue risk for hundreds of API-integrated customers, enabling an informed roadmap decision",
+      "Surfaced QA under-resourcing across five concurrent integration streams, leading to a business case for additional resourcing"
+    ],
+    featuresTitle: "Portals &amp; integrations",
+    features: ["B2B Customer Portal", "Supplier (Vendor) Portal", "Freight Forwarder Portal", "Business Central", "Logility", "Manhattan WMS", "DX2 middleware", "Microsoft Entra ID", "AU · NZ · CA"]
   },
   {
     title: "Lite 'N Easy",
