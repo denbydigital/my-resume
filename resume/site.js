@@ -55,7 +55,7 @@
       '<div class="wrap">' +
         '<div class="foot-base">' +
           '<a class="brand" href="about.html"><b>Laura Denby</b></a>' +
-          '<nav class="foot-nav" aria-label="Footer">' + links + '<a href="htc.html">Her Tech Circle</a><a href="how-i-built-this.html">How I built this</a></nav>' +
+          '<nav class="foot-nav" aria-label="Footer">' + links + '<a href="htc.html">Her Tech Circle</a></nav>' +
           '<span class="foot-copy">© 2026 Laura Denby · IT Business Analyst</span>' +
         '</div>' +
       '</div>'
